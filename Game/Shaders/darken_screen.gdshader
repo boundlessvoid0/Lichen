@@ -11,7 +11,7 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-    COLOR = COLOR * vec4(vec3(darkness_level), 1);
+    COLOR = vec4(vec3(0), darkness_level);
 }
 
 //void light() {
