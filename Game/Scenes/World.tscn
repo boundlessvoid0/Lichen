@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8ujs7efufrw"]
+
+[ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
+[ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62ldo"]
+atlas = ExtResource("1_05kjn")
+region = Rect2(0, 0, 11498, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1f1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62ldo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a1f1x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11498, 0)
+sprite_frames = SubResource("SpriteFrames_a1f1x")
+
+[node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
+position = Vector2(5000, 89)
