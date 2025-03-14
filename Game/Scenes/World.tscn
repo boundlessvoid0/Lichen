@@ -1,31 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=10 format=3 uid="uid://c8ujs7efufrw"]
 
-[ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
+[ext_resource type="Texture2D" uid="uid://dlsh0gxfo2ksx" path="res://Game/Images/World-extended-debug.png" id="1_a4i1s"]
+[ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
 [ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
+[ext_resource type="Script" uid="uid://bfpjecxjromlg" path="res://Game/Scenes/Border.gd" id="2_a4i1s"]
+[ext_resource type="PackedScene" uid="uid://jc78781nbro4" path="res://Game/Scenes/Tree.tscn" id="3_a1f1x"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_62ldo"]
-atlas = ExtResource("1_05kjn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
+atlas = ExtResource("1_hlc17")
 region = Rect2(0, 0, 11498, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a1f1x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_62ldo")
+"texture": SubResource("AtlasTexture_e56ki")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlc17"]
+size = Vector2(256, 1080)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e56ki"]
+size = Vector2(256, 1080)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="World" type="AnimatedSprite2D" parent="."]
+position = Vector2(349, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="ExtendRight" type="AnimatedSprite2D" parent="World"]
+position = Vector2(11498, 0)
+sprite_frames = SubResource("SpriteFrames_a1f1x")
+
+[node name="ExtendLeft" type="AnimatedSprite2D" parent="World"]
+position = Vector2(-11498, 0)
+sprite_frames = SubResource("SpriteFrames_a1f1x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -6085.0
+offset_top = -540.0
+offset_right = 6783.0
+offset_bottom = 540.0
+texture = ExtResource("1_a4i1s")
+stretch_mode = 1
+
+[node name="test looper" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(5000, 89)
+position = Vector2(-5000, 102)
+
+[node name="Tree" parent="." instance=ExtResource("3_a1f1x")]
+position = Vector2(4636, -3)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(372, 0)
+script = ExtResource("2_a4i1s")
+
+[node name="Border_Left" type="CollisionShape2D" parent="Area2D"]
+z_index = 20
+position = Vector2(-5934, 0)
+shape = SubResource("RectangleShape2D_hlc17")
+
+[node name="Border_Right" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5889, 0)
+shape = SubResource("RectangleShape2D_e56ki")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
