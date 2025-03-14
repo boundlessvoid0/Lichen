@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs8pplwxac16b"]
+[gd_scene load_steps=8 format=3 uid="uid://bs8pplwxac16b"]
 
 [ext_resource type="Script" uid="uid://cldoehghbvfaf" path="res://Game/Scenes/character_main.gd" id="1_lseat"]
 [ext_resource type="Texture2D" uid="uid://b6frvgivk8i42" path="res://Game/Images/Character_1.png" id="1_oesdg"]
@@ -21,6 +21,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1gmm"]
+size = Vector2(96, 268)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdkkr"]
+size = Vector2(99, 268)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Character_Main" type="CharacterBody2D" parent="."]
@@ -35,3 +41,15 @@ sprite_frames = SubResource("SpriteFrames_jdkkr")
 
 [node name="Camera2D" type="Camera2D" parent="Character_Main"]
 position = Vector2(-480, -102)
+
+[node name="Area2D_for_Objects" type="Area2D" parent="Character_Main"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collision_Object_Left" type="CollisionShape2D" parent="Character_Main/Area2D_for_Objects"]
+position = Vector2(-49, 3)
+shape = SubResource("RectangleShape2D_p1gmm")
+
+[node name="Collision_Object_Right" type="CollisionShape2D" parent="Character_Main/Area2D_for_Objects"]
+position = Vector2(48.5, 3)
+shape = SubResource("RectangleShape2D_jdkkr")
