@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=8 format=3 uid="uid://du164blpfs2o0"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
+[ext_resource type="Shader" uid="uid://0nhmbvr382xf" path="res://Game/Shaders/darken_screen.gdshader" id="3_a4i1s"]
+[ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="4_hlc17"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62ldo"]
 atlas = ExtResource("1_05kjn")
@@ -18,6 +20,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4i1s"]
+shader = ExtResource("3_a4i1s")
+shader_parameter/darkness_level = 0.37
+
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -29,3 +35,14 @@ sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
 position = Vector2(5000, 89)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PostProcess" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_a4i1s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hlc17")
