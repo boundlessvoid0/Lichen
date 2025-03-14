@@ -1,5 +1,11 @@
 # Lichen
 
+## Coding Structure
+
+- Leeres Node von dem verwendeten Typen als Root jeder Scene
+- Sinnvolle Namen, die beschreiben um was es sich handelt
+    - counter in loops können aber auch nur ein Buchstabe sein
+
 ## LFS
 
 ### Git LFS
