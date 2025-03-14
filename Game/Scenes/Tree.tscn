@@ -23,6 +23,7 @@ script = ExtResource("1_viguc")
 
 [node name="Tree_Area" type="Area2D" parent="."]
 collision_layer = 2
+collision_mask = 2
 
 [node name="Tree_Sprite" type="AnimatedSprite2D" parent="Tree_Area"]
 sprite_frames = SubResource("SpriteFrames_okw48")
