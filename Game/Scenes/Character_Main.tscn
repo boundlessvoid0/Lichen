@@ -35,3 +35,8 @@ sprite_frames = SubResource("SpriteFrames_jdkkr")
 
 [node name="Camera2D" type="Camera2D" parent="Character_Main"]
 position = Vector2(9, -102)
+
+[node name="Label" type="Label" parent="Character_Main"]
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -131.0

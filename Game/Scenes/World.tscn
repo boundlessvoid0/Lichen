@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=9 format=3 uid="uid://c8ujs7efufrw"]
 
-[ext_resource type="Texture2D" uid="uid://dlsh0gxfo2ksx" path="res://Game/Images/World-extended-debug.png" id="1_a4i1s"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
 [ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
 [ext_resource type="Script" uid="uid://bfpjecxjromlg" path="res://Game/Scenes/Border.gd" id="2_a4i1s"]
@@ -28,10 +27,8 @@ size = Vector2(256, 1080)
 size = Vector2(256, 1080)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(1, 0)
 
 [node name="World" type="AnimatedSprite2D" parent="."]
-position = Vector2(349, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="ExtendRight" type="AnimatedSprite2D" parent="World"]
@@ -40,20 +37,6 @@ sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="ExtendLeft" type="AnimatedSprite2D" parent="World"]
 position = Vector2(-11498, 0)
-sprite_frames = SubResource("SpriteFrames_a1f1x")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = -6085.0
-offset_top = -540.0
-offset_right = 6783.0
-offset_bottom = 540.0
-texture = ExtResource("1_a4i1s")
-stretch_mode = 1
-
-[node name="test looper" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
@@ -74,5 +57,12 @@ shape = SubResource("RectangleShape2D_hlc17")
 [node name="Border_Right" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(5889, 0)
 shape = SubResource("RectangleShape2D_e56ki")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-11498, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(5, 0)
+polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1595, 362, 1851, 356, 2046, 362, 2304, 370, 2485, 370, 2620, 373, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
