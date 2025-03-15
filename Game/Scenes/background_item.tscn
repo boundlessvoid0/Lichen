@@ -1,10 +1,128 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd2xdy41kdvjh"]
+[gd_scene load_steps=15 format=3 uid="uid://dd2xdy41kdvjh"]
+
+[ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="1_0ugh4"]
+[ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="2_xwi3i"]
+[ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="3_ayfg5"]
+[ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="4_v66gv"]
+[ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="5_ephgy"]
+[ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="6_bvu0v"]
+[ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="7_ccgqq"]
+[ext_resource type="Texture2D" uid="uid://d282vao207asm" path="res://Game/Images/Background/Flower4.png" id="8_85k84"]
+[ext_resource type="Texture2D" uid="uid://cmx4ydkgrxaay" path="res://Game/Images/Background/Flower5.png" id="9_bf68i"]
+[ext_resource type="Texture2D" uid="uid://bbodc2u656mau" path="res://Game/Images/Background/Grass1.png" id="10_isrov"]
+[ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="11_ng86m"]
+[ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="12_wn5p7"]
+[ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="13_cfiui"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ngyqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0ugh4")
+}],
+"loop": true,
+"name": &"BackTree1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xwi3i")
+}],
+"loop": true,
+"name": &"BackTree2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ayfg5")
+}],
+"loop": true,
+"name": &"BackTree3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v66gv")
+}],
+"loop": true,
+"name": &"BackTree4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ephgy")
+}],
+"loop": true,
+"name": &"Flower1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bvu0v")
+}],
+"loop": true,
+"name": &"Flower2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ccgqq")
+}],
+"loop": true,
+"name": &"Flower3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_85k84")
+}],
+"loop": true,
+"name": &"Flower4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bf68i")
+}],
+"loop": true,
+"name": &"Flower5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_isrov")
+}],
+"loop": true,
+"name": &"Grass1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ng86m")
+}],
+"loop": true,
+"name": &"Grass2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_wn5p7")
+}],
+"loop": true,
+"name": &"Grass3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cfiui")
+}],
+"loop": true,
+"name": &"Grass4",
+"speed": 5.0
+}]
 
 [node name="BackgroundItem" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ngyqf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+animation = &"Grass4"

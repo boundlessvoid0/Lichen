@@ -1,5 +1,33 @@
 extends Control
 
+var HolzCount = 1
+var EssenCount = 2
+var SteinCount = 2
+var WasserCount = 2
+
+var Line1
+var Line2
+var Line3
+var Line4
+
+func decreaseHolzCounter():
+	HolzCount -= 1
+	update_menu(1, HolzCount)
+func decreaseEssenCounter():
+	EssenCount -= 1
+	update_menu(2, EssenCount)
+func decreaseSteinCounter():
+	SteinCount -= 1
+	update_menu(3, SteinCount)
+func decreaseWasserCounter():
+	WasserCount -= 1
+	update_menu(4, WasserCount)
+
+func update_menu(Line, Counter):
+	if Counter != 0:
+		get("Line"+str(Line)).text = str("x "+str(Counter))
+	else:
+		get("Line"+str(Line)).text = str("Done")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,9 +35,9 @@ func _ready() -> void:
 	
 
 func _readyday1():
-	var Line1 = Label.new()
+	Line1 = Label.new()
 	Line1.label_settings = load("res://Game/Scenes/Quest.tres")
-	var Line2 = Label.new()
+	Line2 = Label.new()
 	Line2.label_settings = load("res://Game/Scenes/Quest.tres")
 	var Icon1 = TextureRect.new()
 	var Icon2 = TextureRect.new()

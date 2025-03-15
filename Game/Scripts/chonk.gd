@@ -16,6 +16,7 @@ func Interact() -> void:
 	if is_harvested:
 		return;
 	self.get_node("Sprite_Chonk").play("dead :(");
+	$Chonk_Interaction/Collision_Interaction.disabled = true
 	is_harvested = true;
 
 func GetSequence() -> String:

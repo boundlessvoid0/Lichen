@@ -4,11 +4,10 @@ var is_chopped = false
 var in_area = false
 
 func GetSequence() -> String:
-	return "Holz"
+	return "Stein"
 
 func Interact() -> void:
 	if is_chopped:
 		return;
-	$Tree_Area/Tree_Sprite.play("tree_chopped")
-	$Tree_Area/Tree_Collision.disabled = true
+	$Stone_Area/Stone_Collision.disabled = true
 	is_chopped = true;

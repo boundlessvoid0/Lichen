@@ -9,7 +9,12 @@ var _animation_titel_bool = false
 var _locked = true
 var TARGET_X = 0  # Adjust to world's center
 var _interactables = Array();
-var _interacting = false;
+var Camera
+
+var HolzLock = false
+var EssenLock = false
+var SteinLock = false
+var WasserLock = false
 
 func death():
 	_locked = true;
@@ -20,6 +25,7 @@ func death():
 func _ready():
 	$Icons_Character.visible = false
 	$Icons_Character2.visible = false
+	Camera = get_parent().get_parent().get_node("Camera2D")
 
 func start_animation_titel():
 	_animation_titel_bool = true
@@ -106,13 +112,16 @@ func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-		if Input.is_key_pressed(KEY_E) && !_interacting:
-			_interacting = true;
-			_interactable.Interact();
-			_interactables.erase(_interactable);
 
-		if sequence != "":
-			$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence);
-			$Icons_Character.visible = true
-			$Icons_Character2.visible = true
-	_interacting = false;
+		if get(sequence+"Lock") == false:
+			if Input.is_key_pressed(KEY_E):
+				_interactable.Interact();
+				Camera.get_node("UI for game").call("decrease"+sequence+"Counter")
+				set(sequence+"Lock", true)
+				_interactable = null;
+
+			if sequence != "":
+				print(sequence)
+				$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence)
+				$Icons_Character.visible = true
+				$Icons_Character2.visible = true
