@@ -1,16 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://jc78781nbro4"]
+[gd_scene load_steps=8 format=3 uid="uid://jc78781nbro4"]
 
 [ext_resource type="Script" uid="uid://wsn7x31aguw4" path="res://Game/Scenes/Tree.gd" id="1_viguc"]
-[ext_resource type="Texture2D" uid="uid://diy6v70h3mlgq" path="res://Game/Images/tree.png" id="2_viguc"]
+[ext_resource type="Texture2D" uid="uid://c6ohplae1g5dg" path="res://Game/Images/tree1.png" id="2_okw48"]
+[ext_resource type="Texture2D" uid="uid://b1cy2deckol3h" path="res://Game/Images/tree1_chopped.png" id="3_0xbb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qt0g"]
+atlas = ExtResource("2_okw48")
+region = Rect2(0, 0, 799, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_532xr"]
+atlas = ExtResource("3_0xbb4")
+region = Rect2(0, 0, 799, 1080)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okw48"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_viguc")
+"texture": SubResource("AtlasTexture_1qt0g")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_532xr")
+}],
+"loop": true,
+"name": &"tree_chopped",
 "speed": 5.0
 }]
 

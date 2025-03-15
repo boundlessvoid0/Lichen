@@ -48,12 +48,25 @@ func _physics_process(delta: float) -> void:
 		_movement()
 	else:
 		_animation_titel()
+	_collision_check()
+
+func _collision_check():
+#	if $Sprite_Character_Main.flip_h == false:
+#		$Area2D_for_Objects/Collision_Object_Left.disabled = false
+#		$Area2D_for_Objects/Collision_Object_Right.disabled = true
+#	elif $Sprite_Character_Main.flip_h == true:
+#		$Area2D_for_Objects/Collision_Object_Left.disabled = true
+#		$Area2D_for_Objects/Collision_Object_Right.disabled = false
 
 # Animationtree
 	if velocity.x > 0:
 		self.get_node("Sprite_Character_Main").flip_h = true
+		$Area2D_for_Objects/Collision_Object_Left.disabled = true
+		$Area2D_for_Objects/Collision_Object_Right.disabled = false
 	elif velocity.x < 0:
 		self.get_node("Sprite_Character_Main").flip_h = false
+		$Area2D_for_Objects/Collision_Object_Left.disabled = false
+		$Area2D_for_Objects/Collision_Object_Right.disabled = true
 
 
 func _animation_titel_has_ended(node_self):

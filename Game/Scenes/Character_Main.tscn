@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs8pplwxac16b"]
+[gd_scene load_steps=8 format=3 uid="uid://bs8pplwxac16b"]
 
 [ext_resource type="Script" uid="uid://cldoehghbvfaf" path="res://Game/Scenes/character_main.gd" id="1_lseat"]
 [ext_resource type="Texture2D" uid="uid://b6frvgivk8i42" path="res://Game/Images/Character_1.png" id="1_oesdg"]
@@ -22,6 +22,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lseat"]
+size = Vector2(70, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1gmm"]
+size = Vector2(70, 300)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Character_Main" type="CharacterBody2D" parent="."]
@@ -33,3 +39,16 @@ shape = SubResource("CapsuleShape2D_lseat")
 
 [node name="Sprite_Character_Main" type="AnimatedSprite2D" parent="Character_Main"]
 sprite_frames = SubResource("SpriteFrames_jdkkr")
+
+[node name="Area2D_for_Objects" type="Area2D" parent="Character_Main"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collision_Object_Left" type="CollisionShape2D" parent="Character_Main/Area2D_for_Objects"]
+position = Vector2(-35, 0)
+shape = SubResource("RectangleShape2D_lseat")
+
+[node name="Collision_Object_Right" type="CollisionShape2D" parent="Character_Main/Area2D_for_Objects"]
+position = Vector2(35, 0)
+shape = SubResource("RectangleShape2D_p1gmm")
+disabled = true

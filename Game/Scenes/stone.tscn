@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://db8jhv7wfs35r"]
+
+[ext_resource type="Texture2D" uid="uid://db7ne5erc65b0" path="res://Game/Images/stone_Lichen.png" id="1_6r1p1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76gys"]
+atlas = ExtResource("1_6r1p1")
+region = Rect2(0, 0, 1121, 674)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwrel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76gys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixwx0"]
+radius = 186.0
+height = 868.081
+
+[node name="Stone" type="Node2D"]
+
+[node name="Stone_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Stone_Sprite" type="AnimatedSprite2D" parent="Stone_Area"]
+sprite_frames = SubResource("SpriteFrames_wwrel")
+
+[node name="Stone_Collision" type="CollisionShape2D" parent="Stone_Area"]
+position = Vector2(-24, 85)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ixwx0")
