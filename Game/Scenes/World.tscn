@@ -266,7 +266,6 @@ editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
-visible = false
 z_index = -100
 position = Vector2(0, 60)
 sprite_frames = SubResource("SpriteFrames_7yp87")
