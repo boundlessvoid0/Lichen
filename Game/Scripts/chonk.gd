@@ -12,8 +12,14 @@ var is_harvested = false
 var in_area = false
 
 
-func Kill() -> void:
+func Interact() -> void:
+	if is_harvested:
+		return;
 	self.get_node("Sprite_Chonk").play("dead :(");
+	is_harvested = true;
+
+func GetSequence() -> String:
+	return "Holz"
 
 func _movement(delta : float):
 	velocity.x += TARGET_X * delta;
@@ -56,24 +62,3 @@ func _collision_check():
 			self.get_node("Sprite_Chonk")
 		elif velocity.x < 0:
 			self.get_node("Sprite_Chonk").flip_h = false
-
-
-func _on_interaction_area_entered(area: Area2D) -> void:
-	if is_harvested:
-		return
-
-	if area.get_parent() is CharacterBody2D:
-		if area.get_parent().name == "Character_Main":
-			in_area = true
-
-func _process(delta):
-	if in_area == true:
-		_activate()
-
-func _activate():
-	if Input.is_key_pressed(KEY_E):
-		is_harvested = true;
-		Kill();
-		
-func _on_tree_area_area_exited(area: Area2D) -> void:
-	in_area = false # Replace with function body.
