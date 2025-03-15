@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bldleeqev5qhi" path="res://Game/Scenes/tent.tscn" id="6_uanin"]
 [ext_resource type="PackedScene" uid="uid://blo3y8m6gbori" path="res://Game/Scenes/Tree2.tscn" id="8_aaqah"]
 [ext_resource type="PackedScene" uid="uid://dcmjf45lcxrhk" path="res://Game/Scenes/mushrooms.tscn" id="9_7yp87"]
-[ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
 [ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
@@ -36,6 +35,23 @@
 [ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="28_bqrhx"]
 [ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="29_3m6xv"]
 [ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="30_ve43q"]
+[ext_resource type="Texture2D" uid="uid://chjf6v3jv2eak" path="res://Game/Images/Sky/Pink.png" id="19_vadkx"]
+[ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="20_tf0hr"]
+[ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="21_c5eps"]
+[ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="22_ob5yw"]
+[ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="18_ve43q"]
+[ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="19_x1xrn"]
+[ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="20_v7cu3"]
+[ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="21_jhl6s"]
+[ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="22_xpo2j"]
+[ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="23_kcr3i"]
+[ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="24_lwklj"]
+[ext_resource type="Texture2D" uid="uid://d282vao207asm" path="res://Game/Images/Background/Flower4.png" id="25_0y8xv"]
+[ext_resource type="Texture2D" uid="uid://cmx4ydkgrxaay" path="res://Game/Images/Background/Flower5.png" id="26_ssmg1"]
+[ext_resource type="Texture2D" uid="uid://bbodc2u656mau" path="res://Game/Images/Background/Grass1.png" id="27_kg66c"]
+[ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="28_l782u"]
+[ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="29_bqrhx"]
+[ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="30_3m6xv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -82,7 +98,7 @@ size = Vector2(4.01508, 54.0528)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_ve43q")
+"texture": ExtResource("18_ve43q")
 }],
 "loop": true,
 "name": &"BackTree1",
@@ -90,7 +106,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_x1xrn")
+"texture": ExtResource("19_x1xrn")
 }],
 "loop": true,
 "name": &"BackTree2",
@@ -98,7 +114,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_v7cu3")
+"texture": ExtResource("20_v7cu3")
 }],
 "loop": true,
 "name": &"BackTree3",
@@ -106,7 +122,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_jhl6s")
+"texture": ExtResource("21_jhl6s")
 }],
 "loop": true,
 "name": &"BackTree4",
@@ -114,7 +130,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_xpo2j")
+"texture": ExtResource("22_xpo2j")
 }],
 "loop": true,
 "name": &"Flower1",
@@ -122,7 +138,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_kcr3i")
+"texture": ExtResource("23_kcr3i")
 }],
 "loop": true,
 "name": &"Flower2",
@@ -130,7 +146,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_lwklj")
+"texture": ExtResource("24_lwklj")
 }],
 "loop": true,
 "name": &"Flower3",
@@ -138,7 +154,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("24_0y8xv")
+"texture": ExtResource("25_0y8xv")
 }],
 "loop": true,
 "name": &"Flower4",
@@ -146,7 +162,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("25_ssmg1")
+"texture": ExtResource("26_ssmg1")
 }],
 "loop": true,
 "name": &"Flower5",
@@ -154,7 +170,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("26_kg66c")
+"texture": ExtResource("27_kg66c")
 }],
 "loop": true,
 "name": &"Grass1",
@@ -162,7 +178,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("27_l782u")
+"texture": ExtResource("28_l782u")
 }],
 "loop": true,
 "name": &"Grass2",
@@ -170,7 +186,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("28_bqrhx")
+"texture": ExtResource("29_bqrhx")
 }],
 "loop": true,
 "name": &"Grass3",
@@ -178,13 +194,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_3m6xv")
+"texture": ExtResource("30_3m6xv")
 }],
 "loop": true,
 "name": &"Grass4",
 "speed": 5.0
-}, {
-"frames": [{
 "duration": 1.0,
 "texture": ExtResource("30_ve43q")
 }],
@@ -196,15 +210,40 @@ animations = [{
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaqah"]
 atlas = ExtResource("9_hgroo")
 region = Rect2(0, 0, 1920, 1200)
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yp87"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aaqah")
+"texture": ExtResource("19_vadkx")
 }],
 "loop": true,
-"name": &"default",
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_tf0hr")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_c5eps")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_ob5yw")
+}],
+"loop": true,
+"name": &"4",
 "speed": 5.0
 }]
 
@@ -235,7 +274,7 @@ collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/WeltCollision"]
 position = Vector2(5, 0)
-polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1599, 383, 1838, 408, 2067, 418, 2329, 408, 2509, 395, 2648, 380, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
+polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1599, 383, 1833, 411, 2067, 418, 2327, 417, 2573, 415, 2917, 412, 3057, 390, 3155, 378, 3243, 368, 3377, 356, 3535, 343, 3680, 332, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -934,16 +973,31 @@ animation = &"BackTree3"
 position = Vector2(-5361, -77)
 animation = &"BackTree1"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40"]
+position = Vector2(6137, -77)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"BackTree1"
+
 [node name="BackgroundItem41" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41" index="0"]
 position = Vector2(-4528, 94)
 animation = &"BackTree1"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41"]
+position = Vector2(6970, 94)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"BackTree1"
+
 [node name="BackgroundItem42" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42" index="0"]
 position = Vector2(-4976, -21)
+animation = &"BackTree2"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42"]
+position = Vector2(6522, -21)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"BackTree2"
 
 [node name="BackgroundItem43" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
@@ -1021,10 +1075,9 @@ editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
-visible = false
 z_index = -100
-position = Vector2(0, 60)
 sprite_frames = SubResource("SpriteFrames_7yp87")
+animation = &"1"
 
 [node name="UI for game" type="Control" parent="Camera2D"]
 z_index = 100
