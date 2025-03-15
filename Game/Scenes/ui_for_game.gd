@@ -8,19 +8,23 @@ func _ready() -> void:
 
 func _readyday1():
 	var Line1 = Label.new()
+	Line1.label_settings = load("res://Game/Scenes/Quest.tres")
 	var Line2 = Label.new()
-	var Icon1 = Sprite2D.new()
-	var Icon2 = Sprite2D.new()
+	Line2.label_settings = load("res://Game/Scenes/Quest.tres")
+	var Icon1 = TextureRect.new()
+	var Icon2 = TextureRect.new()
 	Line1.set_name("Line1")
 	Line2.set_name("Line2")
-	Icon1.texture = load("res://Game/Images/Icons/Ausrufezeichen.png")
+	Icon1.texture = load("res://Game/Images/Icons/Loeg.png")
 	Icon2.texture = load("res://Game/Images/Icons/Watr.png")
 	get_node("VBoxContainer/Quest1").add_child(Icon1)
-	get_node("VBoxContainer/Quest1").add_child(Icon2)
+	get_node("VBoxContainer/Quest2").add_child(Icon2)
 	get_node("VBoxContainer/Quest1").add_child(Line1)
 	get_node("VBoxContainer/Quest2").add_child(Line2)
-	Line1.text = "Get new Wood"
-	Line2.text = "Get new Rock"
+	Line1.text = "x 2"
+	Line2.text = "x 2"
+#	Icon1.custom_minimum_size = Vector2(16, 16)
+#	Icon2.custom_minimum_size = Vector2(16, 16)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

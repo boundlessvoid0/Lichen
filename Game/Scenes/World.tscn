@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=28 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
+[ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -273,11 +274,16 @@ offset_left = -864.0
 offset_top = -486.0
 offset_right = -747.0
 offset_bottom = -436.0
-theme_override_constants/separation = 500
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Camera2D/UI for game/VBoxContainer"]
+layout_mode = 2
+text = "To Do:"
+label_settings = ExtResource("17_oa8ph")
 
 [node name="Quest1" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 1000
 
 [node name="Quest2" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
