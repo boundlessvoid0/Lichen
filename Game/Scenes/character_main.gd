@@ -112,10 +112,10 @@ func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-		if sequence == "House":
+		if sequence == "Haus":
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
-				Camera.get_node("UI for game").get_node("Label").text = "Go To Sleep"
+				Camera.get_node("UI for game").get_node("VBoxContainer/Label").text = "Go To Sleep"
 			
 			if sequence != "":
 				print(sequence)
