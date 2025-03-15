@@ -246,6 +246,14 @@ position = Vector2(840, 430)
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
 
+[node name="Verschönerungen" type="Node" parent="Areas"]
+
+[node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
+
+[node name="Grass" type="Node" parent="Areas/Verschönerungen"]
+
+[node name="Bäume" type="Node" parent="Areas/Verschönerungen"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_speed = 10.0
 drag_left_margin = 0.1
