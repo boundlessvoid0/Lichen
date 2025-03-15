@@ -9,6 +9,12 @@ var _animation_titel_bool = false
 var _locked = true
 var TARGET_X = 0  # Adjust to world's center
 
+func death():
+	_locked = true;
+	if get_parent().get_parent().has_node("CanvasLayer"):
+		var postProcessScript = get_parent().get_parent().get_node("CanvasLayer/PostProcessing").get_script();
+		postProcessScript._dead = true;
+
 func start_animation_titel():
 	_animation_titel_bool = true
 	_locked = true
