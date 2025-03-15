@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://3xolh3hfvlaa"]
+
+[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="1_ia7iv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82yb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ia7iv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GrassChonk" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_82yb5")

@@ -9,12 +9,8 @@ var _timer = Timer.new();
 var _randomNumberGenerator = RandomNumberGenerator.new();
 
 var is_harvested = false
-var in_area = false
-
 
 func Interact() -> void:
-	if is_harvested:
-		return;
 	self.get_node("Sprite_Chonk").play("dead :(");
 	$Chonk_Interaction/Collision_Interaction.disabled = true
 	is_harvested = true;

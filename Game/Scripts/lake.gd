@@ -6,8 +6,8 @@ func GetSequence() -> String:
 	return "Wasser"
 
 func Interact() -> void:
-	Update();
 	return
 
 func Update() -> void:
+	state += 1;
 	self.get_node("Lake_Area/Lake_Sprite").play(str(state));

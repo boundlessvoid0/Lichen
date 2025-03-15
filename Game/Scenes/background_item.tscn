@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dd2xdy41kdvjh"]
+[gd_scene load_steps=16 format=3 uid="uid://dd2xdy41kdvjh"]
 
 [ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="1_0ugh4"]
 [ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="2_xwi3i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="11_ng86m"]
 [ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="12_wn5p7"]
 [ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="13_cfiui"]
+[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="14_xwi3i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ngyqf"]
 animations = [{
@@ -119,10 +120,18 @@ animations = [{
 "loop": true,
 "name": &"Grass4",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_xwi3i")
+}],
+"loop": true,
+"name": &"Grass_Chonk",
+"speed": 5.0
 }]
 
 [node name="BackgroundItem" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ngyqf")
-animation = &"Flower1"
+animation = &"Grass_Chonk"

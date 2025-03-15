@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=44 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -20,25 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
 [ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="17_v7cu3"]
-[ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="17_ve43q"]
-[ext_resource type="PackedScene" uid="uid://bpaab0xe7l6cr" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
-[ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="18_x1xrn"]
-[ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="19_v7cu3"]
-[ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="20_jhl6s"]
-[ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="21_xpo2j"]
-[ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="22_kcr3i"]
-[ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="23_lwklj"]
-[ext_resource type="Texture2D" uid="uid://d282vao207asm" path="res://Game/Images/Background/Flower4.png" id="24_0y8xv"]
-[ext_resource type="Texture2D" uid="uid://cmx4ydkgrxaay" path="res://Game/Images/Background/Flower5.png" id="25_ssmg1"]
-[ext_resource type="Texture2D" uid="uid://bbodc2u656mau" path="res://Game/Images/Background/Grass1.png" id="26_kg66c"]
-[ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="27_l782u"]
-[ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="28_bqrhx"]
-[ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="29_3m6xv"]
-[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="30_ve43q"]
-[ext_resource type="Texture2D" uid="uid://chjf6v3jv2eak" path="res://Game/Images/Sky/Pink.png" id="19_vadkx"]
-[ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="20_tf0hr"]
-[ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="21_c5eps"]
-[ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="22_ob5yw"]
+[ext_resource type="PackedScene" uid="uid://dqa3m1cnt7q7c" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
 [ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="18_ve43q"]
 [ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="19_x1xrn"]
 [ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="20_v7cu3"]
@@ -198,52 +180,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"Grass4",
-"speed": 5.0
-"duration": 1.0,
-"texture": ExtResource("30_ve43q")
-}],
-"loop": true,
-"name": &"Grass_Chonk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aaqah"]
-atlas = ExtResource("9_hgroo")
-region = Rect2(0, 0, 1920, 1200)
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7yp87"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_vadkx")
-}],
-"loop": true,
-"name": &"1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_tf0hr")
-}],
-"loop": true,
-"name": &"2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_c5eps")
-}],
-"loop": true,
-"name": &"3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_ob5yw")
-}],
-"loop": true,
-"name": &"4",
 "speed": 5.0
 }]
 
@@ -702,10 +638,9 @@ flip_h = true
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem4" index="0"]
-position = Vector2(4646, 158)
-rotation = 0.357792
+position = Vector2(4635, 110)
 scale = Vector2(1.54, 1.23)
-skew = -0.97913
+skew = -0.359538
 
 [node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -715,6 +650,7 @@ position = Vector2(4637, 150)
 rotation = 0.0610865
 scale = Vector2(1.2, 1.004)
 skew = -0.575959
+animation = &"Flower3"
 flip_v = true
 
 [node name="BackgroundItem6" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
@@ -722,7 +658,7 @@ position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem6" index="0"]
 z_index = -2
-position = Vector2(4588, 232)
+position = Vector2(4570, 205)
 rotation = 0.0610865
 scale = Vector2(1.2, 1.004)
 skew = -0.575959
@@ -1073,11 +1009,6 @@ drag_right_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
-z_index = -100
-sprite_frames = SubResource("SpriteFrames_7yp87")
-animation = &"1"
 
 [node name="UI for game" type="Control" parent="Camera2D"]
 z_index = 100

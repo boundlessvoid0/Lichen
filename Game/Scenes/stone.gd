@@ -1,13 +1,13 @@
 extends Node2D
 
-var is_chopped = false
-var in_area = false
+var state = 0;
 
 func GetSequence() -> String:
 	return "Stein"
 
 func Interact() -> void:
-	if is_chopped:
-		return;
 	$Stone_Area/Stone_Collision.disabled = true
-	is_chopped = true;
+
+func Update() -> void:
+	self.get_node("Lake_Area/Stone_Sprite").play(str(state));
+	$Stone_Area/Stone_Collision.disabled = false;
