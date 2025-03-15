@@ -4,6 +4,7 @@ var HolzCount = 1
 var EssenCount = 2
 var SteinCount = 2
 var WasserCount = 2
+var Daytime = 1
 
 var Icon1= TextureRect.new()
 var Icon2= TextureRect.new()
@@ -65,7 +66,8 @@ func update_menu(Line, Counter):
 		get("Line"+str(Line)).text = str("x "+str(Counter))
 	else:
 		get("Line"+str(Line)).text = str("Done")
-
+	Daytime += 1
+	get_parent().get_node("AnimatedSprite2D").play(str(Daytime))
 # Called when the node enters the scene tree for the first time.
 
 
