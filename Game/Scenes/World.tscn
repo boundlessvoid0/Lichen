@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=46 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -16,9 +16,24 @@
 [ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 [ext_resource type="PackedScene" uid="uid://db8jhv7wfs35r" path="res://Game/Scenes/stone.tscn" id="14_p7028"]
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
+[ext_resource type="PackedScene" uid="uid://dd2xdy41kdvjh" path="res://Game/Scenes/background_item.tscn" id="16_p20bw"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
+[ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="17_ve43q"]
 [ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="18_p7028"]
+[ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="18_x1xrn"]
+[ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="19_v7cu3"]
+[ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="20_jhl6s"]
+[ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="21_xpo2j"]
+[ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="22_kcr3i"]
+[ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="23_lwklj"]
+[ext_resource type="Texture2D" uid="uid://d282vao207asm" path="res://Game/Images/Background/Flower4.png" id="24_0y8xv"]
+[ext_resource type="Texture2D" uid="uid://cmx4ydkgrxaay" path="res://Game/Images/Background/Flower5.png" id="25_ssmg1"]
+[ext_resource type="Texture2D" uid="uid://bbodc2u656mau" path="res://Game/Images/Background/Grass1.png" id="26_kg66c"]
+[ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="27_l782u"]
+[ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="28_bqrhx"]
+[ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="29_3m6xv"]
+[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="30_ve43q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -61,6 +76,121 @@ size = Vector2(256, 1080)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q08w6"]
 size = Vector2(4.01508, 54.0528)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ngyqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ve43q")
+}],
+"loop": true,
+"name": &"BackTree1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_x1xrn")
+}],
+"loop": true,
+"name": &"BackTree2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_v7cu3")
+}],
+"loop": true,
+"name": &"BackTree3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_jhl6s")
+}],
+"loop": true,
+"name": &"BackTree4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_xpo2j")
+}],
+"loop": true,
+"name": &"Flower1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_kcr3i")
+}],
+"loop": true,
+"name": &"Flower2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_lwklj")
+}],
+"loop": true,
+"name": &"Flower3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_0y8xv")
+}],
+"loop": true,
+"name": &"Flower4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ssmg1")
+}],
+"loop": true,
+"name": &"Flower5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_kg66c")
+}],
+"loop": true,
+"name": &"Grass1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_l782u")
+}],
+"loop": true,
+"name": &"Grass2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_bqrhx")
+}],
+"loop": true,
+"name": &"Grass3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_3m6xv")
+}],
+"loop": true,
+"name": &"Grass4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ve43q")
+}],
+"loop": true,
+"name": &"Grass_Chonk",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaqah"]
 atlas = ExtResource("9_hgroo")
 region = Rect2(0, 0, 1920, 1200)
@@ -79,6 +209,7 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="World" type="AnimatedSprite2D" parent="."]
+z_index = -10
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="ExtendRight" type="AnimatedSprite2D" parent="World"]
@@ -90,10 +221,12 @@ position = Vector2(-11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="Debug" type="AnimatedSprite2D" parent="World"]
+visible = false
 z_index = -10
 sprite_frames = SubResource("SpriteFrames_e56ki")
 
 [node name="WeltCollision" type="StaticBody2D" parent="World"]
+z_index = -2
 position = Vector2(-11498, 10)
 collision_layer = 5
 collision_mask = 5
@@ -255,9 +388,300 @@ position = Vector2(-5216, 325)
 
 [node name="Lake2" parent="Areas/See" instance=ExtResource("18_p7028")]
 position = Vector2(6282, 325)
+
 [node name="Verschönerungen" type="Node" parent="Areas"]
 
 [node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
+
+[node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem" index="0"]
+position = Vector2(5030, 238)
+animation = &"Flower2"
+
+[node name="BackgroundItem7" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem7" index="0"]
+position = Vector2(5042, 244)
+rotation = -1.028
+skew = -0.575959
+animation = &"Flower2"
+flip_h = true
+
+[node name="BackgroundItem3" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem3" index="0"]
+position = Vector2(4951, 141)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+animation = &"Flower4"
+
+[node name="BackgroundItem8" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8" index="0"]
+z_index = -1
+position = Vector2(5082, 285)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+animation = &"Flower5"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4781, 177)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4696, 253)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower4"
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4910, 213)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower5"
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4910, 213)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower5"
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4910, 213)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower5"
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4910, 213)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower5"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4928, 212)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4859, 167)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4927, 134)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4783, 145)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4983, 265)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4756, 210)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4838, 209)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower5"
+flip_h = true
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4901, 243)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4871, 267)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+visible = false
+z_index = -1
+position = Vector2(4621, 174)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower3"
+flip_h = true
+
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+z_index = -1
+position = Vector2(4200, 174.535)
+scale = Vector2(0.94, 0.751)
+skew = -0.0349066
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Grass_Chonk"
+
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+z_index = -2
+position = Vector2(4931, 268)
+rotation = 0.148353
+scale = Vector2(0.835, 0.667)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower1"
+flip_h = true
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+z_index = -1
+position = Vector2(4810, 240)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower1"
+flip_h = true
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+z_index = -2
+position = Vector2(4534, 212)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower1"
+flip_h = true
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+z_index = -1
+position = Vector2(4631, 294)
+rotation = 0.357792
+scale = Vector2(0.94, 0.751)
+skew = -0.411898
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"Flower1"
+flip_h = true
+
+[node name="BackgroundItem4" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem4" index="0"]
+position = Vector2(4646, 158)
+rotation = 0.357792
+scale = Vector2(1.54, 1.23)
+skew = -0.97913
+animation = &"Flower1"
+
+[node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem5" index="0"]
+position = Vector2(4637, 150)
+rotation = 0.0610865
+scale = Vector2(1.2, 1.004)
+skew = -0.575959
+animation = &"Flower1"
+flip_v = true
+
+[node name="BackgroundItem6" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+position = Vector2(-158, 238)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem6" index="0"]
+z_index = -2
+position = Vector2(4588, 232)
+rotation = 0.0610865
+scale = Vector2(1.2, 1.004)
+skew = -0.575959
+animation = &"Flower2"
 
 [node name="Grass" type="Node" parent="Areas/Verschönerungen"]
 
@@ -315,3 +739,10 @@ layout_mode = 2
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 
 [editable path="Player"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem7"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem3"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem8"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem4"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem5"]
+[editable path="Areas/Verschönerungen/Blumen/BackgroundItem6"]
