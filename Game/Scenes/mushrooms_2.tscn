@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqw0obbyb0nt4"]
+[gd_scene load_steps=6 format=3 uid="uid://dqw0obbyb0nt4"]
 
 [ext_resource type="Texture2D" uid="uid://mju7k10m2o16" path="res://Game/Images/mushrooms.png" id="1_p207g"]
+[ext_resource type="Script" uid="uid://hx2h1c3by1y2" path="res://Game/Scenes/mushrooms.gd" id="1_vyp1x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vyp1x"]
 atlas = ExtResource("1_p207g")
@@ -21,6 +22,7 @@ animations = [{
 size = Vector2(35, 191)
 
 [node name="mushrooms2" type="Node2D"]
+script = ExtResource("1_vyp1x")
 
 [node name="Area2D" type="Area2D" parent="."]
 

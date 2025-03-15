@@ -9,6 +9,10 @@ var _animation_titel_bool = false
 var _locked = true
 var TARGET_X = 0  # Adjust to world's center
 
+func _ready():
+	$Icons_Character.visible = false
+	$Icons_Character2.visible = false
+
 func start_animation_titel():
 	_animation_titel_bool = true
 	_locked = true
@@ -77,3 +81,17 @@ func _collision_check():
 
 func _animation_titel_has_ended(node_self):
 	emit_signal("_animation_titel_ended", node_self)
+
+
+func _on_area_2d_for_objects_area_entered(area: Area2D) -> void:
+	if _locked == true:
+		return
+	if area.is_in_group("Group_Tree"):
+		$Icons_Character2/Icons_Area/AnimatedSprite2D.play("Holz")
+	$Icons_Character.visible = true
+	$Icons_Character2.visible = true
+
+
+func _on_area_2d_for_objects_area_exited(area: Area2D) -> void:
+	$Icons_Character.visible = false
+	$Icons_Character2.visible = false

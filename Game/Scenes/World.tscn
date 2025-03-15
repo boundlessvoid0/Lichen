@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
-[ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
+[ext_resource type="Script" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")

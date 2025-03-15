@@ -38,7 +38,7 @@ height = 908.0
 [node name="Tree1" type="Node2D"]
 script = ExtResource("1_viguc")
 
-[node name="Tree_Area" type="Area2D" parent="."]
+[node name="Tree_Area" type="Area2D" parent="." groups=["Group_Tree"]]
 collision_layer = 2
 collision_mask = 2
 

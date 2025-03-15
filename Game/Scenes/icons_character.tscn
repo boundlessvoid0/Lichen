@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpjr28wo0lq7m"]
+
+[ext_resource type="Texture2D" uid="uid://fwmtihfr62w6" path="res://Game/Images/Icons/Ausrufezeichen.png" id="1_kg3no"]
+[ext_resource type="Texture2D" uid="uid://guxcimlqw2ow" path="res://Game/Images/Icons/Met.png" id="2_f007f"]
+[ext_resource type="Texture2D" uid="uid://dbpmyijqd0jxc" path="res://Game/Images/Icons/Loeg.png" id="3_jjt0r"]
+[ext_resource type="Texture2D" uid="uid://cj14tno34cne8" path="res://Game/Images/Icons/rogk.png" id="4_ijqep"]
+[ext_resource type="Texture2D" uid="uid://c6de7oflnccq" path="res://Game/Images/Icons/Watr.png" id="5_8lc1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7n42s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kg3no")
+}],
+"loop": true,
+"name": &"Ausrufezeichen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f007f")
+}],
+"loop": true,
+"name": &"Essen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jjt0r")
+}],
+"loop": true,
+"name": &"Holz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ijqep")
+}],
+"loop": true,
+"name": &"Stein",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8lc1m")
+}],
+"loop": true,
+"name": &"Wasser",
+"speed": 5.0
+}]
+
+[node name="Icons_Character" type="Node2D"]
+
+[node name="Icons_Area" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icons_Area"]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_7n42s")
+animation = &"Holz"
+autoplay = "Ausrufezeichen"
