@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db7ne5erc65b0"
-path="res://.godot/imported/stone_Lichen.png-79472244fded71dc3ceb7000d01cd8ac.ctex"
+uid="uid://c6ohplae1g5dg"
+path="res://.godot/imported/tree1.png-9aec70aa7b1dec006b000ebf6d315f83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Images/stone_Lichen.png"
-dest_files=["res://.godot/imported/stone_Lichen.png-79472244fded71dc3ceb7000d01cd8ac.ctex"]
+source_file="res://Game/Images/tree1.png"
+dest_files=["res://.godot/imported/tree1.png-9aec70aa7b1dec006b000ebf6d315f83.ctex"]
 
 [params]
 
