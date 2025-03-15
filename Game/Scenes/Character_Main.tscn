@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://cldoehghbvfaf" path="res://Game/Scenes/character_main.gd" id="1_lseat"]
 [ext_resource type="Texture2D" uid="uid://b6frvgivk8i42" path="res://Game/Images/Character_1.png" id="1_oesdg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lseat"]
-size = Vector2(68, 268)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lseat"]
+radius = 34.0
+height = 268.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1gmm"]
 atlas = ExtResource("1_oesdg")
@@ -28,15 +29,7 @@ script = ExtResource("1_lseat")
 
 [node name="Collision_Enviorment" type="CollisionShape2D" parent="Character_Main"]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_lseat")
+shape = SubResource("CapsuleShape2D_lseat")
 
 [node name="Sprite_Character_Main" type="AnimatedSprite2D" parent="Character_Main"]
 sprite_frames = SubResource("SpriteFrames_jdkkr")
-
-[node name="Camera2D" type="Camera2D" parent="Character_Main"]
-position = Vector2(9, -102)
-
-[node name="Label" type="Label" parent="Character_Main"]
-offset_top = -154.0
-offset_right = 40.0
-offset_bottom = -131.0

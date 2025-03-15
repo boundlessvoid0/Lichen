@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=15 format=3 uid="uid://c8ujs7efufrw"]
 
+[ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
 [ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
 [ext_resource type="Script" uid="uid://bfpjecxjromlg" path="res://Game/Scenes/Border.gd" id="2_a4i1s"]
 [ext_resource type="PackedScene" uid="uid://jc78781nbro4" path="res://Game/Scenes/Tree.tscn" id="3_a1f1x"]
+[ext_resource type="Script" uid="uid://cjdesgmvbhuua" path="res://Game/Scenes/startbutton.gd" id="5_dw6xd"]
+[ext_resource type="Script" uid="uid://cahwynsfovklc" path="res://Game/Scenes/camera_2d.gd" id="5_e56ki"]
+[ext_resource type="Script" uid="uid://cg60nlokie6oy" path="res://Game/Scenes/credits button.gd" id="6_qmw0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -14,6 +18,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e56ki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlc17"]
+atlas = ExtResource("1_05kjn")
+region = Rect2(0, 0, 11498, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e56ki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlc17")
 }],
 "loop": true,
 "name": &"default",
@@ -39,11 +58,13 @@ sprite_frames = SubResource("SpriteFrames_a1f1x")
 position = Vector2(-11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
-[node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(-5000, 102)
+[node name="Debug" type="AnimatedSprite2D" parent="World"]
+visible = false
+z_index = -10
+sprite_frames = SubResource("SpriteFrames_e56ki")
 
-[node name="Tree" parent="." instance=ExtResource("3_a1f1x")]
-position = Vector2(4636, -3)
+[node name="Player" parent="." instance=ExtResource("2_a1f1x")]
+position = Vector2(-1089, 18)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(372, 0)
@@ -65,4 +86,58 @@ position = Vector2(-11498, 0)
 position = Vector2(5, 0)
 polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1595, 362, 1851, 356, 2046, 362, 2304, 370, 2485, 370, 2620, 373, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
+[node name="Titlescreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -565.0
+offset_top = -292.0
+offset_right = -525.0
+offset_bottom = -252.0
+
+[node name="Button" type="Button" parent="Titlescreen"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 86.0
+text = "Start
+"
+script = ExtResource("5_dw6xd")
+
+[node name="Button2" type="Button" parent="Titlescreen"]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 320.0
+offset_bottom = 181.0
+text = "Credits
+"
+script = ExtResource("6_qmw0i")
+
+[node name="Areas" type="Node" parent="."]
+
+[node name="Wiese" type="Node" parent="Areas"]
+
+[node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
+position = Vector2(4867, -3)
+
+[node name="House" type="Node" parent="Areas"]
+
+[node name="Forest" type="Node" parent="Areas"]
+
+[node name="Steinbruch" type="Node" parent="Areas"]
+
+[node name="See" type="Node" parent="Areas"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -102)
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_left_margin = 0.1
+drag_right_margin = 0.1
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_e56ki")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
+[connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
+
+[editable path="Player"]
