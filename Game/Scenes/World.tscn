@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
 [ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
+[ext_resource type="PackedScene" uid="uid://db8jhv7wfs35r" path="res://Game/Scenes/stone.tscn" id="14_p7028"]
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
@@ -247,6 +248,9 @@ position = Vector2(-422, 156)
 position = Vector2(840, 430)
 
 [node name="Steinbruch" type="Node" parent="Areas"]
+
+[node name="Stone" parent="Areas/Steinbruch" instance=ExtResource("14_p7028")]
+position = Vector2(-2902, 240)
 
 [node name="See" type="Node" parent="Areas"]
 
