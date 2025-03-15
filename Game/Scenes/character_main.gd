@@ -111,7 +111,19 @@ func _on_area_2d_for_objects_area_exited(area: Area2D) -> void:
 func _process(delta : float) -> void:
 	if _interactable != null:
 		var sequence = _interactable.GetSequence();
-		if get(sequence+"Lock") == false:
+		if sequence == "House":
+			if Input.is_key_pressed(KEY_E):
+				_interactable.Interact();
+				Camera.get_node("UI for game").get_node("Label").text = "Go To Sleep"
+			
+			if sequence != "":
+				print(sequence)
+				$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence)
+				$Icons_Character.visible = true
+				$Icons_Character2.visible = true
+				
+				
+		elif get(sequence+"Lock") == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
 				Camera.get_node("UI for game").call("decrease"+sequence+"Counter")
