@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=32 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -561,6 +561,30 @@ animation = &"BackTree3"
 position = Vector2(-3223, -64)
 animation = &"BackTree2"
 
+[node name="BackgroundItem50" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem50" index="0"]
+position = Vector2(3296, 53)
+animation = &"BackTree1"
+
+[node name="BackgroundItem51" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem51" index="0"]
+position = Vector2(1384, 77)
+animation = &"BackTree1"
+
+[node name="BackgroundItem52" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem52" index="0"]
+position = Vector2(1661, 75)
+animation = &"BackTree2"
+
+[node name="BackgroundItem53" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem53" index="0"]
+position = Vector2(3062, 48)
+animation = &"BackTree3"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position_smoothing_speed = 10.0
@@ -664,3 +688,7 @@ layout_mode = 2
 [editable path="Areas/Verschönerungen/Bäume/BackgroundItem47"]
 [editable path="Areas/Verschönerungen/Bäume/BackgroundItem48"]
 [editable path="Areas/Verschönerungen/Bäume/BackgroundItem49"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem50"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem51"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem52"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem53"]
