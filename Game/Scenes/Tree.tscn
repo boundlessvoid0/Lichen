@@ -1,16 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://jc78781nbro4"]
+[gd_scene load_steps=6 format=3 uid="uid://jc78781nbro4"]
 
 [ext_resource type="Script" uid="uid://wsn7x31aguw4" path="res://Game/Scenes/Tree.gd" id="1_viguc"]
+[ext_resource type="Texture2D" uid="uid://c1satfe0elk1s" path="res://Game/Images/tree_chopped.png" id="2_okw48"]
 [ext_resource type="Texture2D" uid="uid://diy6v70h3mlgq" path="res://Game/Images/tree.png" id="2_viguc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okw48"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_okw48")
+}],
+"loop": true,
+"name": &"tree_chopped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_viguc")
 }],
 "loop": true,
-"name": &"default",
+"name": &"tree_standing",
 "speed": 5.0
 }]
 
@@ -23,9 +32,12 @@ script = ExtResource("1_viguc")
 
 [node name="Tree_Area" type="Area2D" parent="."]
 collision_layer = 2
+collision_mask = 2
 
 [node name="Tree_Sprite" type="AnimatedSprite2D" parent="Tree_Area"]
 sprite_frames = SubResource("SpriteFrames_okw48")
+animation = &"tree_standing"
+autoplay = "tree_standing"
 
 [node name="Tree_Collision" type="CollisionShape2D" parent="Tree_Area"]
 position = Vector2(7, -41)
