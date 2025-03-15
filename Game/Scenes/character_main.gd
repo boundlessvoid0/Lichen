@@ -109,6 +109,7 @@ func _process(delta : float) -> void:
 			_interactable = null;
 
 		if sequence != "":
-			$Icons_Character2/Icons_Area/AnimatedSprite2D.play();
+			$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence)
 			$Icons_Character.visible = true
 			$Icons_Character2.visible = true
+			
