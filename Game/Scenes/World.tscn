@@ -13,10 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
-[ext_resource type="Shader" uid="uid://0nhmbvr382xf" path="res://Game/Shaders/darken_screen.gdshader" id="14_jxhki"]
+[ext_resource type="Script" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
-[ext_resource type="Script" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -49,8 +48,6 @@ animations = [{
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
-shader = ExtResource("14_jxhki")
-shader_parameter/darkness_level = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlc17"]
 size = Vector2(256, 1080)
@@ -289,7 +286,6 @@ layout_mode = 2
 [node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

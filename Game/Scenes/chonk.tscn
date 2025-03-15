@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://co4cktm8ywsr0"]
+[gd_scene load_steps=27 format=3 uid="uid://co4cktm8ywsr0"]
 
 [ext_resource type="Script" uid="uid://ch0lx0sverk8t" path="res://Game/Scripts/chonk.gd" id="1_8ifot"]
 [ext_resource type="Texture2D" uid="uid://sljdwp85pvha" path="res://Game/Images/Chonky_Idle.png" id="1_swujr"]
 [ext_resource type="Texture2D" uid="uid://djji28gbggn67" path="res://Game/Images/Chonky_dead.png" id="2_dfcb4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ifot"]
+radius = 7.75
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfcb4"]
 atlas = ExtResource("1_swujr")
@@ -172,6 +173,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfcb4"]
+size = Vector2(145, 103)
+
 [node name="Chonk" type="Node2D"]
 
 [node name="Chonk" type="CharacterBody2D" parent="."]
@@ -185,6 +189,16 @@ scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_8ifot")
 
 [node name="Sprite_Chonk" type="AnimatedSprite2D" parent="Chonk"]
-position = Vector2(11, 7)
+position = Vector2(11, -1.5)
 sprite_frames = SubResource("SpriteFrames_wovqn")
-animation = &"dead :("
+animation = &"idle"
+
+[node name="Interaction" type="Area2D" parent="Chonk"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Collision_Interaction" type="CollisionShape2D" parent="Chonk/Interaction"]
+position = Vector2(4.5, -0.5)
+shape = SubResource("RectangleShape2D_dfcb4")
+
+[connection signal="area_entered" from="Chonk/Interaction" to="Chonk" method="_on_interaction_area_entered"]
