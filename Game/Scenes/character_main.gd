@@ -88,8 +88,12 @@ func _on_area_2d_for_objects_area_entered(area: Area2D) -> void:
 		return
 	if area.is_in_group("Group_Tree"):
 		$Icons_Character2/Icons_Area/AnimatedSprite2D.play("Holz")
-	$Icons_Character.visible = true
-	$Icons_Character2.visible = true
+		$Icons_Character.visible = true
+		$Icons_Character2.visible = true
+	if area.is_in_group("Group_Mushroom"):
+		$Icons_Character2/Icons_Area/AnimatedSprite2D.play("Essen")
+		$Icons_Character.visible = true
+		$Icons_Character2.visible = true
 
 
 func _on_area_2d_for_objects_area_exited(area: Area2D) -> void:
