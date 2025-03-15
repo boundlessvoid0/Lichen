@@ -1,5 +1,18 @@
 extends Control
 
+var HolzCount = 2
+var EssenCount = 2
+var SteinCount = 2
+var WasserCount = 2
+
+func decreaseHolzCounter():
+	HolzCount -= 1
+func decreaseEssenCounter():
+	HolzCount -= 1
+func decreaseSteinCounter():
+	HolzCount -= 1
+func decreaseWasserCounter():
+	HolzCount -= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
