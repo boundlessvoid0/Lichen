@@ -5,10 +5,47 @@ var EssenCount = 2
 var SteinCount = 2
 var WasserCount = 2
 
-var Line1
-var Line2
-var Line3
-var Line4
+var Icon1= TextureRect.new()
+var Icon2= TextureRect.new()
+var Icon3= TextureRect.new()
+var Icon4= TextureRect.new()
+
+
+var Line1= Label.new()
+var Line2= Label.new()
+var Line3= Label.new()
+var Line4= Label.new()
+
+func _ready() -> void:
+	get_node("VBoxContainer/Quest1").add_child(Icon1)
+	get_node("VBoxContainer/Quest2").add_child(Icon2)
+	get_node("VBoxContainer/Quest3").add_child(Icon3)
+	get_node("VBoxContainer/Quest4").add_child(Icon4)
+
+	get_node("VBoxContainer/Quest1").add_child(Line1)
+	get_node("VBoxContainer/Quest2").add_child(Line2)
+	get_node("VBoxContainer/Quest3").add_child(Line3)
+	get_node("VBoxContainer/Quest4").add_child(Line4)
+
+	Line1.set_name("Line1")
+	Line2.set_name("Line2")
+	Line3.set_name("Line3")
+	Line4.set_name("Line4")
+	
+	Line1.label_settings = load("res://Game/Scenes/Quest.tres")
+	Line2.label_settings = load("res://Game/Scenes/Quest.tres")
+	Line3.label_settings = load("res://Game/Scenes/Quest.tres")
+	Line4.label_settings = load("res://Game/Scenes/Quest.tres")
+
+	Icon1.texture = load("res://Game/Images/Icons/Loeg.png")
+	Icon2.texture = load("res://Game/Images/Icons/Met.png")
+	Icon3.texture = load("res://Game/Images/Icons/rogk.png")
+	Icon4.texture = load("res://Game/Images/Icons/Watr.png")
+	
+
+	
+	_readyday1()
+	
 
 func decreaseHolzCounter():
 	HolzCount -= 1
@@ -30,27 +67,13 @@ func update_menu(Line, Counter):
 		get("Line"+str(Line)).text = str("Done")
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	_readyday1()
-	
+
 
 func _readyday1():
-	Line1 = Label.new()
-	Line1.label_settings = load("res://Game/Scenes/Quest.tres")
-	Line2 = Label.new()
-	Line2.label_settings = load("res://Game/Scenes/Quest.tres")
-	var Icon1 = TextureRect.new()
-	var Icon2 = TextureRect.new()
-	Line1.set_name("Line1")
-	Line2.set_name("Line2")
-	Icon1.texture = load("res://Game/Images/Icons/Loeg.png")
-	Icon2.texture = load("res://Game/Images/Icons/Watr.png")
-	get_node("VBoxContainer/Quest1").add_child(Icon1)
-	get_node("VBoxContainer/Quest2").add_child(Icon2)
-	get_node("VBoxContainer/Quest1").add_child(Line1)
-	get_node("VBoxContainer/Quest2").add_child(Line2)
-	Line1.text = "x 2"
-	Line2.text = "x 2"
+	Line1.text = str("x " + str(HolzCount))
+	Line2.text = str("x " + str(EssenCount))
+	Line3.text = str("x " + str(SteinCount))
+	Line4.text = str("x " + str(WasserCount))
 #	Icon1.custom_minimum_size = Vector2(16, 16)
 #	Icon2.custom_minimum_size = Vector2(16, 16)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
