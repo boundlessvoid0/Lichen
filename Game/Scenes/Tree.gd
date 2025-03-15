@@ -11,7 +11,7 @@ func _process(delta):
 func _check_chop():
 	if is_chopped == true:
 		$Tree_Area/Tree_Sprite.play("tree_chopped")
-		
+		$Tree_Area/Tree_Collision.disabled = true
 
 func _activate():
 	if Input.is_key_pressed(KEY_E):
@@ -25,3 +25,4 @@ func _on_tree_area_area_entered(area: Area2D) -> void:
 
 func _on_tree_area_area_exited(area: Area2D) -> void:
 	in_area = false # Replace with function body.
+	
