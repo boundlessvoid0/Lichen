@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=23 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
+[ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -79,6 +80,7 @@ position = Vector2(-11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
 [node name="Debug" type="AnimatedSprite2D" parent="World"]
+visible = false
 z_index = -10
 sprite_frames = SubResource("SpriteFrames_e56ki")
 
@@ -181,7 +183,7 @@ position = Vector2(-860, 182)
 position = Vector2(-422, 156)
 
 [node name="mushrooms3" parent="Areas/Forest/mushrooms front" instance=ExtResource("11_vlq5u")]
-position = Vector2(839, 415)
+position = Vector2(840, 430)
 
 [node name="Steinbruch" type="Node" parent="Areas"]
 
@@ -191,7 +193,6 @@ position = Vector2(839, 415)
 position = Vector2(-4114, -90)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -102)
 position_smoothing_speed = 10.0
 drag_left_margin = 0.1
 drag_right_margin = 0.1
@@ -200,8 +201,37 @@ editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+visible = false
 z_index = -100
+position = Vector2(0, 60)
 sprite_frames = SubResource("SpriteFrames_7yp87")
+
+[node name="UI for game" type="Control" parent="Camera2D"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_jxhki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UI for game"]
+layout_mode = 0
+offset_left = -864.0
+offset_top = -486.0
+offset_right = -747.0
+offset_bottom = -436.0
+
+[node name="Quest1" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quest2" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quest3" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
+layout_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
