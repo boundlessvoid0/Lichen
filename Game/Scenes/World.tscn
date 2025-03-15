@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=46 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -21,6 +21,19 @@
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
 [ext_resource type="PackedScene" uid="uid://bpaab0xe7l6cr" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
+[ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="18_ve43q"]
+[ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="19_x1xrn"]
+[ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="20_v7cu3"]
+[ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="21_jhl6s"]
+[ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="22_xpo2j"]
+[ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="23_kcr3i"]
+[ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="24_lwklj"]
+[ext_resource type="Texture2D" uid="uid://d282vao207asm" path="res://Game/Images/Background/Flower4.png" id="25_0y8xv"]
+[ext_resource type="Texture2D" uid="uid://cmx4ydkgrxaay" path="res://Game/Images/Background/Flower5.png" id="26_ssmg1"]
+[ext_resource type="Texture2D" uid="uid://bbodc2u656mau" path="res://Game/Images/Background/Grass1.png" id="27_kg66c"]
+[ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="28_l782u"]
+[ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="29_bqrhx"]
+[ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="30_3m6xv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -62,6 +75,113 @@ size = Vector2(256, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q08w6"]
 size = Vector2(4.01508, 54.0528)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ngyqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ve43q")
+}],
+"loop": true,
+"name": &"BackTree1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_x1xrn")
+}],
+"loop": true,
+"name": &"BackTree2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_v7cu3")
+}],
+"loop": true,
+"name": &"BackTree3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jhl6s")
+}],
+"loop": true,
+"name": &"BackTree4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_xpo2j")
+}],
+"loop": true,
+"name": &"Flower1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_kcr3i")
+}],
+"loop": true,
+"name": &"Flower2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_lwklj")
+}],
+"loop": true,
+"name": &"Flower3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_0y8xv")
+}],
+"loop": true,
+"name": &"Flower4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ssmg1")
+}],
+"loop": true,
+"name": &"Flower5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_kg66c")
+}],
+"loop": true,
+"name": &"Grass1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_l782u")
+}],
+"loop": true,
+"name": &"Grass2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_bqrhx")
+}],
+"loop": true,
+"name": &"Grass3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_3m6xv")
+}],
+"loop": true,
+"name": &"Grass4",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaqah"]
 atlas = ExtResource("9_hgroo")
@@ -507,16 +627,31 @@ animation = &"BackTree3"
 position = Vector2(-5361, -77)
 animation = &"BackTree1"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40"]
+position = Vector2(6137, -77)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"BackTree1"
+
 [node name="BackgroundItem41" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41" index="0"]
 position = Vector2(-4528, 94)
 animation = &"BackTree1"
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41"]
+position = Vector2(6970, 94)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
+animation = &"BackTree1"
+
 [node name="BackgroundItem42" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42" index="0"]
 position = Vector2(-4976, -21)
+animation = &"BackTree2"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42"]
+position = Vector2(6522, -21)
+sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"BackTree2"
 
 [node name="BackgroundItem43" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
