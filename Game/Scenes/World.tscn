@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=29 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
+[ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="18_p7028"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -245,6 +246,12 @@ position = Vector2(840, 430)
 
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
+
+[node name="Lake" parent="Areas/See" instance=ExtResource("18_p7028")]
+position = Vector2(-5216, 325)
+
+[node name="Lake2" parent="Areas/See" instance=ExtResource("18_p7028")]
+position = Vector2(6282, 325)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_speed = 10.0

@@ -8,7 +8,8 @@ const GRAVITY = 100.0
 var _animation_titel_bool = false
 var _locked = true
 var TARGET_X = 0  # Adjust to world's center
-var _interactable = null;
+var _interactables = Array();
+var _interacting = false;
 
 func death():
 	_locked = true;
@@ -93,22 +94,25 @@ func _animation_titel_has_ended(node_self):
 func _on_area_2d_for_objects_area_entered(area: Area2D) -> void:
 	if _locked == true:
 		return
-	_interactable = area.get_parent();
+	_interactables.push_back(area.get_parent());
 
 
 func _on_area_2d_for_objects_area_exited(area: Area2D) -> void:
 	$Icons_Character.visible = false
 	$Icons_Character2.visible = false
-	_interactable = null;
+	_interactables.erase(area.get_parent());
 
 func _process(delta : float) -> void:
-	if _interactable != null:
+	if _interactables.size() > 0:
+		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-		if Input.is_key_pressed(KEY_E):
+		if Input.is_key_pressed(KEY_E) && !_interacting:
+			_interacting = true;
 			_interactable.Interact();
-			_interactable = null;
+			_interactables.erase(_interactable);
 
 		if sequence != "":
-			$Icons_Character2/Icons_Area/AnimatedSprite2D.play();
+			$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence);
 			$Icons_Character.visible = true
 			$Icons_Character2.visible = true
+	_interacting = false;

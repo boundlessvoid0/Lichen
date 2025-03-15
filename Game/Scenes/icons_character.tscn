@@ -56,5 +56,5 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Icons_Area"]
 z_index = 10
 sprite_frames = SubResource("SpriteFrames_7n42s")
-animation = &"Holz"
+animation = &"Wasser"
 autoplay = "Ausrufezeichen"
