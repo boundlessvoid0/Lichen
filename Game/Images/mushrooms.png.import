@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgqrixtbf2rms"
-path="res://.godot/imported/Character_Idle.png-88a2bbac2cc81b41f0853383e68edbef.ctex"
+uid="uid://mju7k10m2o16"
+path="res://.godot/imported/mushrooms.png-70a59de4236265ecdfd412e164f9871c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Images/Character_Idle.png"
-dest_files=["res://.godot/imported/Character_Idle.png-88a2bbac2cc81b41f0853383e68edbef.ctex"]
+source_file="res://Game/Images/mushrooms.png"
+dest_files=["res://.godot/imported/mushrooms.png-70a59de4236265ecdfd412e164f9871c.ctex"]
 
 [params]
 

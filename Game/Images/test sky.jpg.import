@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgqrixtbf2rms"
-path="res://.godot/imported/Character_Idle.png-88a2bbac2cc81b41f0853383e68edbef.ctex"
+uid="uid://dwmlr3oqfpjyk"
+path="res://.godot/imported/test sky.jpg-6c7d54c93fad5e9960f23477da3393a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Images/Character_Idle.png"
-dest_files=["res://.godot/imported/Character_Idle.png-88a2bbac2cc81b41f0853383e68edbef.ctex"]
+source_file="res://Game/Images/test sky.jpg"
+dest_files=["res://.godot/imported/test sky.jpg-6c7d54c93fad5e9960f23477da3393a8.ctex"]
 
 [params]
 

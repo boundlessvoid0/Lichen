@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcmjf45lcxrhk"]
+
+[ext_resource type="Texture2D" uid="uid://mju7k10m2o16" path="res://Game/Images/mushrooms.png" id="1_qde7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qde7u"]
+atlas = ExtResource("1_qde7u")
+region = Rect2(0, 0, 169, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfju7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qde7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcxfx"]
+size = Vector2(44.5, 227)
+
+[node name="Mushrooms" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_yfju7")
+frame_progress = 0.44069
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(38.75, -57.5)
+shape = SubResource("RectangleShape2D_xcxfx")

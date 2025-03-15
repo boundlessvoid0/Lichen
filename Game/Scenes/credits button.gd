@@ -9,8 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if fading:
+	if fading and modulate.a > 0:
 		self.modulate.a = max(modulate.a - fade_speed * delta, 0)
 
 func _on_pressed() -> void:
 	fading = true
+	self.disabled = true

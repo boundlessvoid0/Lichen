@@ -21,7 +21,8 @@ func _animation_titel():
 		velocity.x = 0
 		_animation_titel_bool = false
 		_locked = false
-		get_parent().get_parent().get_node("Camera2D")._change_parent(self)
+		if get_parent().get_parent().has_node("Camera2D"):
+			get_parent().get_parent().get_node("Camera2D")._change_parent(self)
 
 	move_and_slide()
 

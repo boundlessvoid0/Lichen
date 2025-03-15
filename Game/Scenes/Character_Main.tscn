@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs8pplwxac16b"]
+[gd_scene load_steps=13 format=3 uid="uid://bs8pplwxac16b"]
 
 [ext_resource type="Script" uid="uid://cldoehghbvfaf" path="res://Game/Scenes/character_main.gd" id="1_lseat"]
 [ext_resource type="Texture2D" uid="uid://b6frvgivk8i42" path="res://Game/Images/Character_1.png" id="1_oesdg"]
+[ext_resource type="Texture2D" uid="uid://dgqrixtbf2rms" path="res://Game/Images/Character_Idle.png" id="3_p1gmm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lseat"]
 radius = 34.0
@@ -10,6 +11,22 @@ height = 268.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1gmm"]
 atlas = ExtResource("1_oesdg")
 region = Rect2(0, 0, 204, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdkkr"]
+atlas = ExtResource("3_p1gmm")
+region = Rect2(0, 0, 204, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbaht"]
+atlas = ExtResource("3_p1gmm")
+region = Rect2(204, 0, 204, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsxpr"]
+atlas = ExtResource("3_p1gmm")
+region = Rect2(408, 0, 204, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcwj4"]
+atlas = ExtResource("3_p1gmm")
+region = Rect2(612, 0, 204, 372)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdkkr"]
 animations = [{
@@ -20,6 +37,23 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdkkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbaht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsxpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcwj4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lseat"]
@@ -39,6 +73,9 @@ shape = SubResource("CapsuleShape2D_lseat")
 
 [node name="Sprite_Character_Main" type="AnimatedSprite2D" parent="Character_Main"]
 sprite_frames = SubResource("SpriteFrames_jdkkr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.492896
 
 [node name="Area2D_for_Objects" type="Area2D" parent="Character_Main"]
 collision_layer = 2

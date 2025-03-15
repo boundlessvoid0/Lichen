@@ -8,6 +8,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.global_position.y = 0
+	get_child(0).global_position.x = self.global_position.x
 
 func _change_parent(node_self):
 	var node = self
