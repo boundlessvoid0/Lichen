@@ -7,7 +7,7 @@ const GRAVITY = 100.0
 
 var _animation_titel_bool = false
 var _locked = true
-var TARGET_X = 0  # Adjust to your world's center
+var TARGET_X = 0  # Adjust to world's center
 
 func start_animation_titel():
 	_animation_titel_bool = true
@@ -17,7 +17,7 @@ func _animation_titel():
 	var direction = sign(TARGET_X - global_position.x)  # Moves toward target
 	velocity.x = direction * SPEED
 
-	if abs(global_position.x - TARGET_X) < 5:  # Use a small threshold instead of ==
+	if abs(global_position.x - TARGET_X) < 5: 
 		velocity.x = 0
 		_animation_titel_bool = false
 		_locked = false
