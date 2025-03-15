@@ -48,18 +48,30 @@ func _ready() -> void:
 	_readyday1()
 	
 
-func decreaseHolzCounter():
+func decreaseHolzCounter() -> int:
+	if HolzCount == 0:
+		return HolzCount;
 	HolzCount -= 1
 	update_menu(1, HolzCount)
-func decreaseEssenCounter():
+	return HolzCount;
+func decreaseEssenCounter() -> int:
+	if EssenCount == 0:
+		return 0;
 	EssenCount -= 1
 	update_menu(2, EssenCount)
-func decreaseSteinCounter():
+	return EssenCount;
+func decreaseSteinCounter() -> int:
+	if SteinCount == 0:
+		return 0;
 	SteinCount -= 1
 	update_menu(3, SteinCount)
-func decreaseWasserCounter():
+	return SteinCount;
+func decreaseWasserCounter() -> int:
+	if WasserCount == 0:
+		return 0;
 	WasserCount -= 1
 	update_menu(4, WasserCount)
+	return WasserCount;
 
 func update_menu(Line, Counter):
 	if Counter != 0:

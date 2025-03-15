@@ -6,7 +6,9 @@ func GetSequence() -> String:
 	return "Stein"
 
 func Interact() -> void:
-	$Stone_Area/Stone_Collision.disabled = true
+	return;
+	#TODO: Maybe fix so that there is a delay when interacting
+	#$Stone_Area/Stone_Collision.disabled = true
 
 func Update() -> void:
 	self.get_node("Lake_Area/Stone_Sprite").play(str(state));

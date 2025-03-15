@@ -127,8 +127,8 @@ func _process(delta : float) -> void:
 		elif get(sequence+"Lock") == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
-				Camera.get_node("UI for game").call("decrease"+sequence+"Counter")
-				set(sequence+"Lock", true)
+				if Camera.get_node("UI for game").call("decrease"+sequence+"Counter") == 0:
+					set(sequence+"Lock", true)
 				_interactable = null;
 
 			if sequence != "":
