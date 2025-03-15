@@ -123,4 +123,3 @@ func _process(delta : float) -> void:
 				$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence)
 				$Icons_Character.visible = true
 				$Icons_Character2.visible = true
-			

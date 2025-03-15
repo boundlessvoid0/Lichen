@@ -8,11 +8,11 @@ var WasserCount = 2
 func decreaseHolzCounter():
 	HolzCount -= 1
 func decreaseEssenCounter():
-	HolzCount -= 1
+	EssenCount -= 1
 func decreaseSteinCounter():
-	HolzCount -= 1
+	SteinCount -= 1
 func decreaseWasserCounter():
-	HolzCount -= 1
+	WasserCount -= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
