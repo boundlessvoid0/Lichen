@@ -19,10 +19,11 @@ func Interact() -> void:
 	is_harvested = true;
 
 func GetSequence() -> String:
-	return "Holz"
+	return "Essen"
 
 func _movement(delta : float):
 	velocity.x += TARGET_X * delta;
+	self.get_node("Sprite_Chonk").play("walk");
 	move_and_slide()
 
 func SetNewLocation():

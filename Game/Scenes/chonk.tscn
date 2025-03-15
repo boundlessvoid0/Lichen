@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://co4cktm8ywsr0"]
+[gd_scene load_steps=32 format=3 uid="uid://co4cktm8ywsr0"]
 
 [ext_resource type="Script" uid="uid://ch0lx0sverk8t" path="res://Game/Scripts/chonk.gd" id="1_8ifot"]
 [ext_resource type="Texture2D" uid="uid://sljdwp85pvha" path="res://Game/Images/Chonky_Idle.png" id="1_swujr"]
 [ext_resource type="Texture2D" uid="uid://djji28gbggn67" path="res://Game/Images/Chonky_dead.png" id="2_dfcb4"]
+[ext_resource type="Texture2D" uid="uid://b068iwje02m4o" path="res://Game/Images/Chonky_Walk.png" id="4_agy4c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ifot"]
 radius = 7.75
@@ -87,6 +88,22 @@ region = Rect2(6084, 0, 338, 289)
 atlas = ExtResource("1_swujr")
 region = Rect2(6422, 0, 338, 289)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wovqn"]
+atlas = ExtResource("4_agy4c")
+region = Rect2(0, 0, 338, 289)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpb22"]
+atlas = ExtResource("4_agy4c")
+region = Rect2(338, 0, 338, 289)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la5y2"]
+atlas = ExtResource("4_agy4c")
+region = Rect2(676, 0, 338, 289)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu0h8"]
+atlas = ExtResource("4_agy4c")
+region = Rect2(1014, 0, 338, 289)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wovqn"]
 animations = [{
 "frames": [{
@@ -167,7 +184,19 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wovqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpb22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la5y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu0h8")
+}],
 "loop": true,
 "name": &"walk",
 "speed": 5.0
@@ -191,7 +220,7 @@ shape = SubResource("CapsuleShape2D_8ifot")
 [node name="Sprite_Chonk" type="AnimatedSprite2D" parent="Chonk"]
 position = Vector2(11, -1.5)
 sprite_frames = SubResource("SpriteFrames_wovqn")
-animation = &"idle"
+animation = &"walk"
 
 [node name="Chonk_Interaction" type="Area2D" parent="Chonk"]
 collision_layer = 2
