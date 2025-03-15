@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpaab0xe7l6cr"]
+
+[ext_resource type="Texture2D" uid="uid://ch17fehac2vm1" path="res://Game/Images/House/House1.png" id="2_13dw3"]
+[ext_resource type="Texture2D" uid="uid://qcsdbr1an7jg" path="res://Game/Images/House/House2.png" id="3_yslj7"]
+[ext_resource type="Texture2D" uid="uid://dpkdjygk47eii" path="res://Game/Images/House/House3.png" id="4_va1vk"]
+[ext_resource type="Texture2D" uid="uid://c1dpxr1cujhig" path="res://Game/Images/House/House4.png" id="5_fnqeh"]
+[ext_resource type="Texture2D" uid="uid://c54xftr0300uq" path="res://Game/Images/House/House5.png" id="6_a1rrh"]
+[ext_resource type="Texture2D" uid="uid://b4qfjrcbk4hvc" path="res://Game/Images/House/House6.png" id="7_uhbyi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd550"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_13dw3")
+}],
+"loop": true,
+"name": &"lv1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yslj7")
+}],
+"loop": true,
+"name": &"lv2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_va1vk")
+}],
+"loop": true,
+"name": &"lv3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fnqeh")
+}],
+"loop": true,
+"name": &"lv4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_a1rrh")
+}],
+"loop": true,
+"name": &"lv5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uhbyi")
+}],
+"loop": true,
+"name": &"lv6",
+"speed": 5.0
+}]
+
+[node name="Haus" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jd550")
+animation = &"lv6"

@@ -112,8 +112,19 @@ func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-
-		if get(sequence+"Lock") == false:
+		if sequence == "House":
+			if Input.is_key_pressed(KEY_E):
+				_interactable.Interact();
+				Camera.get_node("UI for game").get_node("Label").text = "Go To Sleep"
+			
+			if sequence != "":
+				print(sequence)
+				$Icons_Character2/Icons_Area/AnimatedSprite2D.play(sequence)
+				$Icons_Character.visible = true
+				$Icons_Character2.visible = true
+				
+				
+		elif get(sequence+"Lock") == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
 				Camera.get_node("UI for game").call("decrease"+sequence+"Counter")

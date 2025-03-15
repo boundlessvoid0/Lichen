@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=48 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cjdesgmvbhuua" path="res://Game/Scenes/startbutton.gd" id="5_dw6xd"]
 [ext_resource type="Script" uid="uid://cahwynsfovklc" path="res://Game/Scenes/camera_2d.gd" id="5_e56ki"]
 [ext_resource type="Script" uid="uid://cg60nlokie6oy" path="res://Game/Scenes/credits button.gd" id="6_qmw0i"]
+[ext_resource type="PackedScene" path="res://Game/Scenes/tent.tscn" id="6_uanin"]
 [ext_resource type="PackedScene" uid="uid://blo3y8m6gbori" path="res://Game/Scenes/Tree2.tscn" id="8_aaqah"]
 [ext_resource type="PackedScene" uid="uid://dcmjf45lcxrhk" path="res://Game/Scenes/mushrooms.tscn" id="9_7yp87"]
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
@@ -15,12 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
 [ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
 [ext_resource type="PackedScene" uid="uid://db8jhv7wfs35r" path="res://Game/Scenes/stone.tscn" id="14_p7028"]
+[ext_resource type="PackedScene" uid="uid://dd2xdy41kdvjh" path="res://Game/Scenes/background_item.tscn" id="15_uanin"]
 [ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
-[ext_resource type="PackedScene" uid="uid://dd2xdy41kdvjh" path="res://Game/Scenes/background_item.tscn" id="16_p20bw"]
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
+[ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="17_v7cu3"]
 [ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="17_ve43q"]
-[ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="18_p7028"]
+[ext_resource type="PackedScene" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
 [ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="18_x1xrn"]
 [ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="19_v7cu3"]
 [ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="20_jhl6s"]
@@ -233,7 +235,7 @@ collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/WeltCollision"]
 position = Vector2(5, 0)
-polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1595, 362, 1851, 356, 2046, 362, 2304, 370, 2485, 370, 2620, 373, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
+polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1599, 383, 1838, 408, 2067, 418, 2329, 408, 2509, 395, 2648, 380, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -272,6 +274,12 @@ offset_bottom = 181.0
 text = "Credits
 "
 script = ExtResource("6_qmw0i")
+
+[node name="Tent" parent="." instance=ExtResource("6_uanin")]
+position = Vector2(2134, 246)
+
+[node name="Haus" parent="." instance=ExtResource("18_p7028")]
+position = Vector2(2324, -56)
 
 [node name="Player" parent="." instance=ExtResource("2_a1f1x")]
 position = Vector2(-1089, 18)
@@ -383,24 +391,24 @@ position = Vector2(-2902, 240)
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
 
-[node name="Lake" parent="Areas/See" instance=ExtResource("18_p7028")]
+[node name="Lake" parent="Areas/See" instance=ExtResource("17_v7cu3")]
 position = Vector2(-5216, 325)
 
-[node name="Lake2" parent="Areas/See" instance=ExtResource("18_p7028")]
+[node name="Lake2" parent="Areas/See" instance=ExtResource("17_v7cu3")]
 position = Vector2(6282, 325)
 
 [node name="Verschönerungen" type="Node" parent="Areas"]
 
 [node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
 
-[node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem" index="0"]
 position = Vector2(5030, 238)
 animation = &"Flower2"
 
-[node name="BackgroundItem7" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem7" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem7" index="0"]
@@ -410,7 +418,7 @@ skew = -0.575959
 animation = &"Flower2"
 flip_h = true
 
-[node name="BackgroundItem3" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem3" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem3" index="0"]
@@ -420,7 +428,7 @@ scale = Vector2(0.94, 0.751)
 skew = -0.411898
 animation = &"Flower4"
 
-[node name="BackgroundItem8" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem8" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8" index="0"]
@@ -651,7 +659,7 @@ sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"Flower1"
 flip_h = true
 
-[node name="BackgroundItem4" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem4" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem4" index="0"]
@@ -659,9 +667,8 @@ position = Vector2(4646, 158)
 rotation = 0.357792
 scale = Vector2(1.54, 1.23)
 skew = -0.97913
-animation = &"Flower1"
 
-[node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem5" index="0"]
@@ -669,10 +676,9 @@ position = Vector2(4637, 150)
 rotation = 0.0610865
 scale = Vector2(1.2, 1.004)
 skew = -0.575959
-animation = &"Flower1"
 flip_v = true
 
-[node name="BackgroundItem6" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("16_p20bw")]
+[node name="BackgroundItem6" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem6" index="0"]
@@ -687,7 +693,327 @@ animation = &"Flower2"
 
 [node name="Bäume" type="Node" parent="Areas/Verschönerungen"]
 
+[node name="BackgroundItem" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+position = Vector2(-145, 135)
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem" index="0"]
+position = Vector2(-1961, -170)
+animation = &"BackTree1"
+
+[node name="BackgroundItem2" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem2" index="0"]
+position = Vector2(-1410, -123)
+animation = &"BackTree1"
+
+[node name="BackgroundItem3" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem3" index="0"]
+position = Vector2(-1790, -175)
+animation = &"BackTree1"
+
+[node name="BackgroundItem4" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem4" index="0"]
+position = Vector2(-1345, -92)
+animation = &"BackTree4"
+
+[node name="BackgroundItem5" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem5" index="0"]
+position = Vector2(-2001, -85)
+animation = &"BackTree3"
+
+[node name="BackgroundItem6" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem6" index="0"]
+position = Vector2(-1575, -167)
+animation = &"BackTree3"
+
+[node name="BackgroundItem7" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem7" index="0"]
+position = Vector2(-2255, 66)
+animation = &"BackTree2"
+
+[node name="BackgroundItem8" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem8" index="0"]
+position = Vector2(-1007, 37)
+animation = &"BackTree1"
+
+[node name="BackgroundItem9" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem9" index="0"]
+position = Vector2(926, 136)
+animation = &"BackTree1"
+
+[node name="BackgroundItem10" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem10" index="0"]
+position = Vector2(114, -35)
+animation = &"BackTree1"
+
+[node name="BackgroundItem11" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem11" index="0"]
+position = Vector2(315, -21)
+animation = &"BackTree1"
+
+[node name="BackgroundItem12" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem12" index="0"]
+position = Vector2(-408, 43)
+animation = &"BackTree1"
+
+[node name="BackgroundItem13" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem13" index="0"]
+position = Vector2(-218, 8)
+animation = &"BackTree1"
+
+[node name="BackgroundItem14" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem14" index="0"]
+position = Vector2(24, -23)
+animation = &"BackTree4"
+
+[node name="BackgroundItem15" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem15" index="0"]
+position = Vector2(-881, 57)
+animation = &"BackTree4"
+
+[node name="BackgroundItem16" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem16" index="0"]
+position = Vector2(-310, 35)
+animation = &"BackTree4"
+
+[node name="BackgroundItem17" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem17" index="0"]
+position = Vector2(-52, -11)
+animation = &"BackTree4"
+
+[node name="BackgroundItem18" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem18" index="0"]
+position = Vector2(190, -20)
+animation = &"BackTree2"
+
+[node name="BackgroundItem19" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem19" index="0"]
+position = Vector2(-766, 58)
+animation = &"BackTree1"
+
+[node name="BackgroundItem20" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem20" index="0"]
+position = Vector2(-518, 60)
+animation = &"BackTree2"
+
+[node name="BackgroundItem21" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem21" index="0"]
+position = Vector2(559, 40)
+animation = &"BackTree1"
+
+[node name="BackgroundItem22" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem22" index="0"]
+position = Vector2(656, 66)
+animation = &"BackTree1"
+
+[node name="BackgroundItem23" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem23" index="0"]
+position = Vector2(-142, 5)
+animation = &"BackTree2"
+
+[node name="BackgroundItem24" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem24" index="0"]
+position = Vector2(-641, 67)
+animation = &"BackTree4"
+
+[node name="BackgroundItem25" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem25" index="0"]
+position = Vector2(-941, 48)
+animation = &"BackTree3"
+
+[node name="BackgroundItem26" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem26" index="0"]
+position = Vector2(384, -2)
+animation = &"BackTree2"
+
+[node name="BackgroundItem27" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem27" index="0"]
+position = Vector2(251, -21)
+animation = &"BackTree4"
+
+[node name="BackgroundItem28" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem28" index="0"]
+position = Vector2(467, 21)
+animation = &"BackTree3"
+
+[node name="BackgroundItem29" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem29" index="0"]
+position = Vector2(867, 133)
+animation = &"BackTree1"
+
+[node name="BackgroundItem30" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem30" index="0"]
+position = Vector2(729, 100)
+animation = &"BackTree4"
+
+[node name="BackgroundItem31" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem31" index="0"]
+position = Vector2(801, 119)
+animation = &"BackTree3"
+
+[node name="BackgroundItem32" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem32" index="0"]
+position = Vector2(1076, 148)
+animation = &"BackTree1"
+
+[node name="BackgroundItem33" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem33" index="0"]
+position = Vector2(1032, 160)
+animation = &"BackTree2"
+
+[node name="BackgroundItem34" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem34" index="0"]
+position = Vector2(984, 149)
+animation = &"BackTree4"
+
+[node name="BackgroundItem35" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem35" index="0"]
+position = Vector2(-579, 57)
+animation = &"BackTree1"
+
+[node name="BackgroundItem36" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem36" index="0"]
+position = Vector2(-463, 56)
+animation = &"BackTree4"
+
+[node name="BackgroundItem37" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem37" index="0"]
+position = Vector2(-354, 45)
+animation = &"BackTree3"
+
+[node name="BackgroundItem38" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem38" index="0"]
+position = Vector2(-825, 55)
+animation = &"BackTree1"
+
+[node name="BackgroundItem39" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem39" index="0"]
+position = Vector2(-715, 69)
+animation = &"BackTree3"
+
+[node name="BackgroundItem40" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40" index="0"]
+position = Vector2(-5361, -77)
+animation = &"BackTree1"
+
+[node name="BackgroundItem41" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41" index="0"]
+position = Vector2(-4528, 94)
+animation = &"BackTree1"
+
+[node name="BackgroundItem42" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42" index="0"]
+position = Vector2(-4976, -21)
+animation = &"BackTree2"
+
+[node name="BackgroundItem43" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem43" index="0"]
+position = Vector2(-3927, 110)
+animation = &"BackTree2"
+
+[node name="BackgroundItem44" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem44" index="0"]
+position = Vector2(-3531, -6)
+animation = &"BackTree2"
+
+[node name="BackgroundItem45" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem45" index="0"]
+position = Vector2(-3724, 53)
+animation = &"BackTree3"
+
+[node name="BackgroundItem46" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem46" index="0"]
+position = Vector2(-2974, -64)
+animation = &"BackTree1"
+
+[node name="BackgroundItem47" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem47" index="0"]
+position = Vector2(-2745, -18)
+animation = &"BackTree4"
+
+[node name="BackgroundItem48" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem48" index="0"]
+position = Vector2(-2533, 63)
+animation = &"BackTree3"
+
+[node name="BackgroundItem49" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem49" index="0"]
+position = Vector2(-3223, -64)
+animation = &"BackTree2"
+
+[node name="BackgroundItem50" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem50" index="0"]
+position = Vector2(3296, 53)
+animation = &"BackTree1"
+
+[node name="BackgroundItem51" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem51" index="0"]
+position = Vector2(1384, 77)
+animation = &"BackTree1"
+
+[node name="BackgroundItem52" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem52" index="0"]
+position = Vector2(1661, 75)
+animation = &"BackTree2"
+
+[node name="BackgroundItem53" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+
+[node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem53" index="0"]
+position = Vector2(3062, 48)
+animation = &"BackTree3"
+
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position_smoothing_speed = 10.0
 drag_left_margin = 0.1
 drag_right_margin = 0.1
@@ -696,6 +1022,7 @@ editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+visible = false
 z_index = -100
 position = Vector2(0, 60)
 sprite_frames = SubResource("SpriteFrames_7yp87")
@@ -746,3 +1073,56 @@ layout_mode = 2
 [editable path="Areas/Verschönerungen/Blumen/BackgroundItem4"]
 [editable path="Areas/Verschönerungen/Blumen/BackgroundItem5"]
 [editable path="Areas/Verschönerungen/Blumen/BackgroundItem6"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem2"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem3"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem4"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem5"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem6"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem7"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem8"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem9"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem10"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem11"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem12"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem13"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem14"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem15"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem16"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem17"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem18"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem19"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem20"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem21"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem22"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem23"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem24"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem25"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem26"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem27"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem28"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem29"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem30"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem31"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem32"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem33"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem34"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem35"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem36"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem37"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem38"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem39"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem40"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem41"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem42"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem43"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem44"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem45"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem46"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem47"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem48"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem49"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem50"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem51"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem52"]
+[editable path="Areas/Verschönerungen/Bäume/BackgroundItem53"]
