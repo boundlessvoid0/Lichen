@@ -153,7 +153,7 @@ size = Vector2(70, 300)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1gmm"]
 size = Vector2(70, 300)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Character_Main" type="CharacterBody2D" parent="."]
 script = ExtResource("1_lseat")
@@ -164,9 +164,8 @@ shape = SubResource("CapsuleShape2D_lseat")
 
 [node name="Sprite_Character_Main" type="AnimatedSprite2D" parent="Character_Main"]
 sprite_frames = SubResource("SpriteFrames_jdkkr")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.425832
 
 [node name="Area2D_for_Objects" type="Area2D" parent="Character_Main"]
 collision_layer = 2

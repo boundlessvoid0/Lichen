@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=27 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
-[ext_resource type="Script" uid="uid://dyi1edhl5on0r" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
+[ext_resource type="Script" path="res://Game/Scenes/ui_for_game.gd" id="14_jxhki"]
+[ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
+[ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -45,11 +47,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlc17"]
 size = Vector2(256, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e56ki"]
 size = Vector2(256, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q08w6"]
+size = Vector2(4.01508, 54.0528)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaqah"]
 atlas = ExtResource("9_hgroo")
@@ -86,26 +93,24 @@ sprite_frames = SubResource("SpriteFrames_e56ki")
 
 [node name="WeltCollision" type="StaticBody2D" parent="World"]
 position = Vector2(-11498, 10)
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/WeltCollision"]
 position = Vector2(5, 0)
 polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1595, 362, 1851, 356, 2046, 362, 2304, 370, 2485, 370, 2620, 373, 2868, 367, 3130, 352, 3233, 341, 3300, 329, 3441, 325, 3651, 328, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
-[node name="Player" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(-1089, 18)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(372, 0)
-script = ExtResource("2_a4i1s")
-
-[node name="Border_Left" type="CollisionShape2D" parent="Area2D"]
-z_index = 20
-position = Vector2(-5934, 0)
-shape = SubResource("RectangleShape2D_hlc17")
-
-[node name="Border_Right" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5889, 0)
-shape = SubResource("RectangleShape2D_e56ki")
+[node name="PostProcessing" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_y2md8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_y2md8")
 
 [node name="Titlescreen" type="Control" parent="."]
 z_index = 100
@@ -133,12 +138,60 @@ text = "Credits
 "
 script = ExtResource("6_qmw0i")
 
+[node name="Player" parent="." instance=ExtResource("2_a1f1x")]
+position = Vector2(-1089, 18)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(372, 0)
+script = ExtResource("2_a4i1s")
+
+[node name="Border_Left" type="CollisionShape2D" parent="Area2D"]
+z_index = 20
+position = Vector2(-5934, 0)
+shape = SubResource("RectangleShape2D_hlc17")
+
+[node name="Border_Right" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5889, 0)
+shape = SubResource("RectangleShape2D_e56ki")
+
 [node name="Areas" type="Node" parent="."]
 
 [node name="Wiese" type="Node" parent="Areas"]
 
 [node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
 position = Vector2(4867, -3)
+
+[node name="Chonk" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(3941, 299)
+
+[node name="Chonk2" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(4970, 364)
+
+[node name="Chonk3" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(4389, 87)
+
+[node name="Chonk4" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(3853, 45)
+
+[node name="Chonk5" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(4123, 304)
+
+[node name="Chonk6" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+position = Vector2(3701, 279)
+
+[node name="ChonkBorder" type="StaticBody2D" parent="Areas/Wiese"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="RightBorder" type="CollisionShape2D" parent="Areas/Wiese/ChonkBorder"]
+position = Vector2(5094, 3)
+scale = Vector2(21.22, 21.22)
+shape = SubResource("RectangleShape2D_q08w6")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Areas/Wiese/ChonkBorder"]
+position = Vector2(3118, -17)
+scale = Vector2(21.22, 21.22)
+shape = SubResource("RectangleShape2D_q08w6")
 
 [node name="House" type="Node" parent="Areas"]
 
@@ -235,8 +288,8 @@ layout_mode = 2
 [node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 
 [editable path="Player"]
