@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=25 format=3 uid="uid://c8ujs7efufrw"]
 
-[ext_resource type="Shader" uid="uid://0nhmbvr382xf" path="res://Game/Shaders/darken_screen.gdshader" id="3_a4i1s"]
-[ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="4_hlc17"]
+[ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
+[ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
+[ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
 [ext_resource type="Script" uid="uid://bfpjecxjromlg" path="res://Game/Scenes/Border.gd" id="2_a4i1s"]
 [ext_resource type="PackedScene" uid="uid://jc78781nbro4" path="res://Game/Scenes/Tree.tscn" id="3_a1f1x"]
 [ext_resource type="Script" uid="uid://cjdesgmvbhuua" path="res://Game/Scenes/startbutton.gd" id="5_dw6xd"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dwmlr3oqfpjyk" path="res://Game/Images/test sky.jpg" id="9_hgroo"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
 [ext_resource type="PackedScene" uid="uid://cq7aalad57evt" path="res://Game/Scenes/mushrooms_3.tscn" id="11_vlq5u"]
+[ext_resource type="Shader" uid="uid://0nhmbvr382xf" path="res://Game/Shaders/darken_screen.gdshader" id="14_jxhki"]
+[ext_resource type="Script" uid="uid://dkncta4at17rc" path="res://Game/Scripts/post_process.gd" id="15_y2md8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -64,9 +67,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4i1s"]
-shader = ExtResource("3_a4i1s")
-shader_parameter/darkness_level = 0.37
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
+shader = ExtResource("14_jxhki")
+shader_parameter/darkness_level = 0.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -77,19 +80,6 @@ sprite_frames = SubResource("SpriteFrames_a1f1x")
 position = Vector2(11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
 
-[node name="Node2D" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(5000, 89)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PostProcess" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_a4i1s")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_hlc17")
 [node name="ExtendLeft" type="AnimatedSprite2D" parent="World"]
 position = Vector2(-11498, 0)
 sprite_frames = SubResource("SpriteFrames_a1f1x")
@@ -215,6 +205,17 @@ script = ExtResource("5_e56ki")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
 z_index = -100
 sprite_frames = SubResource("SpriteFrames_7yp87")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_y2md8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_y2md8")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
