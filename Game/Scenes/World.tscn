@@ -1,14 +1,19 @@
-[gd_scene load_steps=53 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=59 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
 [ext_resource type="PackedScene" uid="uid://bs8pplwxac16b" path="res://Game/Scenes/Character_Main.tscn" id="2_a1f1x"]
 [ext_resource type="Script" uid="uid://bfpjecxjromlg" path="res://Game/Scenes/Border.gd" id="2_a4i1s"]
+[ext_resource type="FontFile" uid="uid://dw0bj0u7p7ycf" path="res://Game/Godot Fontpack/fonts/kirifont/KiriFont.otf" id="3_3m6xv"]
 [ext_resource type="PackedScene" uid="uid://jc78781nbro4" path="res://Game/Scenes/Tree.tscn" id="3_a1f1x"]
+[ext_resource type="Texture2D" uid="uid://11v5v7gb0kpq" path="res://Game/Images/Key_D.png" id="5_bqrhx"]
 [ext_resource type="Script" uid="uid://cjdesgmvbhuua" path="res://Game/Scenes/startbutton.gd" id="5_dw6xd"]
 [ext_resource type="Script" uid="uid://cahwynsfovklc" path="res://Game/Scenes/camera_2d.gd" id="5_e56ki"]
+[ext_resource type="Texture2D" uid="uid://cbbiwm6coghc2" path="res://Game/Images/Key_E.png" id="6_3m6xv"]
 [ext_resource type="Script" uid="uid://cg60nlokie6oy" path="res://Game/Scenes/credits button.gd" id="6_qmw0i"]
+[ext_resource type="Texture2D" uid="uid://dylaholjjoyf5" path="res://Game/Images/Key_A.png" id="6_ssmg1"]
 [ext_resource type="PackedScene" uid="uid://bldleeqev5qhi" path="res://Game/Scenes/tent.tscn" id="6_uanin"]
+[ext_resource type="FontFile" uid="uid://cq4vu75nw4vaw" path="res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf" id="7_ehmn8"]
 [ext_resource type="PackedScene" uid="uid://blo3y8m6gbori" path="res://Game/Scenes/Tree2.tscn" id="8_aaqah"]
 [ext_resource type="PackedScene" uid="uid://dcmjf45lcxrhk" path="res://Game/Scenes/mushrooms.tscn" id="9_7yp87"]
 [ext_resource type="PackedScene" uid="uid://dqw0obbyb0nt4" path="res://Game/Scenes/mushrooms_2.tscn" id="10_qrsg0"]
@@ -40,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
-[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
+[ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -71,6 +76,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5cim"]
+font = ExtResource("7_ehmn8")
+font_size = 30
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
 
@@ -369,6 +378,94 @@ collision_mask = 5
 position = Vector2(5, 0)
 polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1599, 383, 1833, 411, 2067, 418, 2327, 417, 2573, 415, 2917, 412, 3057, 390, 3155, 378, 3243, 368, 3377, 356, 3535, 343, 3680, 332, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
+[node name="Titlescreen" type="Control" parent="."]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_left = 809.0
+offset_top = -354.0
+offset_right = 849.0
+offset_bottom = -314.0
+
+[node name="Button" type="Button" parent="Titlescreen"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("3_3m6xv")
+text = "Start
+"
+script = ExtResource("5_dw6xd")
+
+[node name="TextureRect2" type="TextureRect" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 200.0
+offset_right = 255.0
+offset_bottom = 343.0
+texture = ExtResource("6_ssmg1")
+
+[node name="TextureRect" type="TextureRect" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 200.0
+offset_right = 350.0
+offset_bottom = 343.0
+texture = ExtResource("5_bqrhx")
+
+[node name="TextureRect3" type="TextureRect" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 400.0
+offset_right = 350.0
+offset_bottom = 543.0
+texture = ExtResource("6_3m6xv")
+
+[node name="Label" type="Label" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_top = 259.0
+offset_right = 110.0
+offset_bottom = 289.0
+text = "Move:"
+label_settings = SubResource("LabelSettings_y5cim")
+
+[node name="Label2" type="Label" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_top = 459.0
+offset_right = 110.0
+offset_bottom = 489.0
+text = "Interact:"
+label_settings = SubResource("LabelSettings_y5cim")
+
+[node name="Button2" type="Button" parent="Titlescreen/Button"]
+layout_mode = 0
+offset_top = 95.0
+offset_right = 320.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("7_ehmn8")
+text = "Credits
+"
+script = ExtResource("6_qmw0i")
+
+[node name="Label" type="Label" parent="Titlescreen/Button/Button2"]
+visible = false
+layout_mode = 0
+offset_left = 469.0
+offset_top = 398.0
+offset_right = 977.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("7_ehmn8")
+text = "This Game was made for Puls GameJam 20 25 by:
+
+-Mia Ernst ~Artist + Designer
+
+-Yi-He Chang ~ Music + Sound Artist
+
+-Benjamin Briegel ~ Programmer & Git
+
+-Steffen Siegrist ~ Programmer
+
+-Stefan Oswald ~ Programmer"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -379,33 +476,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(1, 1, 1, 0)
 script = ExtResource("15_y2md8")
-
-[node name="Titlescreen" type="Control" parent="."]
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-offset_left = 800.0
-offset_top = -352.0
-offset_right = 840.0
-offset_bottom = -312.0
-
-[node name="Button" type="Button" parent="Titlescreen"]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 86.0
-text = "Start
-"
-script = ExtResource("5_dw6xd")
-
-[node name="Button2" type="Button" parent="Titlescreen"]
-layout_mode = 0
-offset_top = 95.0
-offset_right = 320.0
-offset_bottom = 181.0
-text = "Credits
-"
-script = ExtResource("6_qmw0i")
 
 [node name="Tent" parent="." instance=ExtResource("6_uanin")]
 position = Vector2(2134, 246)
@@ -1389,7 +1461,8 @@ stream = ExtResource("40_0y8xv")
 script = ExtResource("40_lwklj")
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
-[connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Titlescreen/Button/Button2" to="Titlescreen/Button/Button2" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer" to="Camera2D/UI for game" method="_on_audio_stream_player_finished"]
 

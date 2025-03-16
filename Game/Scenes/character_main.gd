@@ -9,7 +9,7 @@ const GRAVITY = 100.0
 
 var _animation_titel_bool = false
 var _locked = true
-var TARGET_X = 1500  # Adjust to world's center
+var TARGET_X = 1499  # Adjust to world's center
 var _interactables = Array();
 var Camera
 

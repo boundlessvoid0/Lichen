@@ -13,5 +13,7 @@ func _process(delta):
 		self.modulate.a = max(modulate.a - fade_speed * delta, 0)
 
 func _on_pressed() -> void:
-	fading = true
-	self.disabled = true
+	if get_child(0).visible == true:
+		get_child(0).visible = false
+	else:
+		get_child(0).visible = true
