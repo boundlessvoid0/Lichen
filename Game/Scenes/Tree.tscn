@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jc78781nbro4"]
+[gd_scene load_steps=9 format=3 uid="uid://jc78781nbro4"]
 
 [ext_resource type="Script" uid="uid://wsn7x31aguw4" path="res://Game/Scenes/Tree.gd" id="1_viguc"]
 [ext_resource type="Texture2D" uid="uid://c6ohplae1g5dg" path="res://Game/Images/tree1.png" id="2_okw48"]
@@ -35,6 +35,8 @@ animations = [{
 radius = 34.0
 height = 908.0
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_okw48"]
+
 [node name="Tree1" type="Node2D"]
 script = ExtResource("1_viguc")
 
@@ -49,6 +51,9 @@ autoplay = "default"
 [node name="Tree_Collision" type="CollisionShape2D" parent="Tree_Area"]
 position = Vector2(7, -41)
 shape = SubResource("CapsuleShape2D_0xbb4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_okw48")
 
 [connection signal="area_entered" from="Tree_Area" to="." method="_on_tree_area_area_entered"]
 [connection signal="area_exited" from="Tree_Area" to="." method="_on_tree_area_area_exited"]

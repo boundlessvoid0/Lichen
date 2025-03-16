@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=8 format=3 uid="uid://db8jhv7wfs35r"]
+
 
 [ext_resource type="Texture2D" uid="uid://db7ne5erc65b0" path="res://Game/Images/stone_Lichen.png" id="1_6r1p1"]
 [ext_resource type="Script" uid="uid://yvlopun8iud6" path="res://Game/Scenes/stone.gd" id="1_76gys"]
@@ -39,6 +41,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76gys"]
 size = Vector2(1719, 892)
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_76gys"]
+
 [node name="Stone" type="Node2D"]
 script = ExtResource("1_76gys")
 
@@ -54,3 +58,6 @@ animation = &"0"
 position = Vector2(-32.0001, -535.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_76gys")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_76gys")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqg7xrc666fvy"
-path="res://.godot/imported/fliegen.png-d17de1249648addf6eb8713f6927fee4.ctex"
+uid="uid://d1doru2pwaxe4"
+path="res://.godot/imported/Fliegen.png-f8df7b54ec7c9c10685f500d85dd0553.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Images/fliegen.png"
-dest_files=["res://.godot/imported/fliegen.png-d17de1249648addf6eb8713f6927fee4.ctex"]
+source_file="res://Game/Images/Fliegen.png"
+dest_files=["res://.godot/imported/Fliegen.png-f8df7b54ec7c9c10685f500d85dd0553.ctex"]
 
 [params]
 

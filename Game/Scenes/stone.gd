@@ -1,14 +1,15 @@
 extends Node2D
 
 var state = 0;
+var sound_stone = preload("res://Game/Sounds/Stein.wav")
 
 func GetSequence() -> String:
 	return "Stein"
 
 func Interact() -> void:
-	return;
-	#TODO: Maybe fix so that there is a delay when interacting
-	#$Stone_Area/Stone_Collision.disabled = true
+	$Stone_Area/Stone_Collision.disabled = true
+	$AudioStreamPlayer2D.stream = sound_stone
+	$AudioStreamPlayer2D.play()
 
 func Update() -> void:
 	state += 1;

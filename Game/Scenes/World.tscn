@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=53 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="34_kcr3i"]
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
+[ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
+[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -383,9 +385,9 @@ script = ExtResource("15_y2md8")
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
-offset_left = -565.0
+offset_left = 935.0
 offset_top = -292.0
-offset_right = -525.0
+offset_right = 975.0
 offset_bottom = -252.0
 
 [node name="Button" type="Button" parent="Titlescreen"]
@@ -412,7 +414,7 @@ position = Vector2(2134, 246)
 position = Vector2(2324, -56)
 
 [node name="Player" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(-1089, 18)
+position = Vector2(-222, 18)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(372, 0)
@@ -1318,6 +1320,7 @@ animation = &"BackTree3"
 frame_progress = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1500, 0)
 position_smoothing_speed = 10.0
 drag_left_margin = 0.1
 drag_right_margin = 0.1
@@ -1334,11 +1337,13 @@ animation = &"1"
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 9.0
+offset_right = 49.0
 offset_bottom = 40.0
 script = ExtResource("14_jxhki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UI for game"]
+visible = false
 layout_mode = 0
 offset_left = -864.0
 offset_top = -486.0
@@ -1349,7 +1354,8 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
-text = "To Do:"
+text = "
+"
 label_settings = ExtResource("17_oa8ph")
 
 [node name="Quest1" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
@@ -1365,10 +1371,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_0y8xv")
+script = ExtResource("40_lwklj")
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="Camera2D/UI for game" method="_on_audio_stream_player_finished"]
 
 [editable path="Player"]
 [editable path="Areas/Verschönerungen/Blumen/BackgroundItem"]
