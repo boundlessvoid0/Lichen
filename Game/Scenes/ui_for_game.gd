@@ -125,6 +125,8 @@ func _readyday3():
 	
 	_readytexts()
 	_reset_day()
+	Music.set_stream(preload("res://Game/Sounds/Music/music2.mp3"))
+	Music.play()
 	
 func _readyday4():
 	
@@ -135,6 +137,8 @@ func _readyday5():
 	
 	_readytexts()
 	_reset_day()
+	Music.set_stream(preload("res://Game/Sounds/Music/music3.mp3"))
+	Music.play()
 	
 func _readyday6():
 	
@@ -172,6 +176,7 @@ func _reset_day():
 	HausLevel += 1
 	Haus.play("lv"+str(HausLevel))
 		# Update Sprites and reset collision
+	Haus.get_parent().get_node("AudioStreamPlayer2D").play()
 	for chonk in Chonks:
 		chonk.Update();
 	for wasser in Wassers:

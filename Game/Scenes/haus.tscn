@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpaab0xe7l6cr"]
+[gd_scene load_steps=10 format=3 uid="uid://bpaab0xe7l6cr"]
 
 [ext_resource type="Texture2D" uid="uid://c1i3u4mdxcmud" path="res://Game/Images/House/House0.png" id="1_ighyy"]
 [ext_resource type="Texture2D" uid="uid://ch17fehac2vm1" path="res://Game/Images/House/House1.png" id="2_13dw3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1dpxr1cujhig" path="res://Game/Images/House/House4.png" id="5_fnqeh"]
 [ext_resource type="Texture2D" uid="uid://c54xftr0300uq" path="res://Game/Images/House/House5.png" id="6_a1rrh"]
 [ext_resource type="Texture2D" uid="uid://b4qfjrcbk4hvc" path="res://Game/Images/House/House6.png" id="7_uhbyi"]
+[ext_resource type="AudioStream" uid="uid://cefg88rubkque" path="res://Game/Sounds/Bauen.wav" id="8_13dw3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jd550"]
 animations = [{
@@ -73,3 +74,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_jd550")
 animation = &"lv0"
 autoplay = "lv0"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_13dw3")

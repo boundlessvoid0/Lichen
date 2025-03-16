@@ -1,12 +1,10 @@
-
-[gd_scene load_steps=40 format=3 uid="uid://co4cktm8ywsr0"]
-
+[gd_scene load_steps=41 format=3 uid="uid://co4cktm8ywsr0"]
 
 [ext_resource type="Script" uid="uid://ch0lx0sverk8t" path="res://Game/Scripts/chonk.gd" id="1_8ifot"]
 [ext_resource type="Texture2D" uid="uid://sljdwp85pvha" path="res://Game/Images/Chonky_Idle.png" id="1_swujr"]
 [ext_resource type="Texture2D" uid="uid://djji28gbggn67" path="res://Game/Images/Chonky_dead.png" id="2_dfcb4"]
 [ext_resource type="Texture2D" uid="uid://b068iwje02m4o" path="res://Game/Images/Chonky_Walk.png" id="4_agy4c"]
-[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/Fliegen.png" id="5_fu1o5"]
+[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/fliegen.png" id="5_fu1o5"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_agy4c"]
 
