@@ -26,6 +26,7 @@ func _ready():
 	$Icons_Character.visible = false
 	$Icons_Character2.visible = false
 	Camera = get_parent().get_parent().get_node("Camera2D")
+	Camera.get_node("UI for game").Player = self
 
 func start_animation_titel():
 	_animation_titel_bool = true
@@ -112,7 +113,7 @@ func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-		if sequence == "Haus":
+		if sequence == "Haus" and !(HolzLock && EssenLock && WasserLock && SteinLock) == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
 				Camera.get_node("UI for game").get_node("VBoxContainer/Label").text = "Go To Sleep"
