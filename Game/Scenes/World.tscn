@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=54 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="34_kcr3i"]
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
+[ext_resource type="Shader" uid="uid://0nhmbvr382xf" path="res://Game/Shaders/darken_screen.gdshader" id="38_ssmg1"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
 [ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
@@ -71,8 +72,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlc17"]
 size = Vector2(256, 1080)
@@ -340,6 +339,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2md8"]
+shader = ExtResource("38_ssmg1")
+shader_parameter/darkness_level = 0.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="World" type="AnimatedSprite2D" parent="."]
@@ -368,18 +371,6 @@ collision_mask = 5
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/WeltCollision"]
 position = Vector2(5, 0)
 polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4845, 338, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3574, 60, -3397, 50, -3172, 28, -2965, 50, -2732, 84, -2535, 113, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1158, 225, -973, 218, -808, 152, -684, 140, -559, 168, -458, 205, -364, 244, -198, 261, -91, 319, 49, 374, 174, 389, 329, 425, 460, 471, 587, 449, 682, 427, 836, 421, 954, 436, 1135, 421, 1220, 388, 1335, 374, 1445, 368, 1599, 383, 1833, 411, 2067, 418, 2327, 417, 2573, 415, 2917, 412, 3057, 390, 3155, 378, 3243, 368, 3377, 356, 3535, 343, 3680, 332, 3824, 332, 4059, 378, 4285, 399, 4475, 407, 4658, 436, 4892, 455, 5048, 422, 5227, 322, 5345, 286, 5458, 269, 5596, 276, 5768, 305, 5930, 329, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="PostProcessing" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_y2md8")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("15_y2md8")
 
 [node name="Titlescreen" type="Control" parent="."]
 z_index = 100
@@ -1354,7 +1345,6 @@ offset_bottom = 40.0
 script = ExtResource("14_jxhki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UI for game"]
-visible = false
 layout_mode = 0
 offset_left = -864.0
 offset_top = -486.0
@@ -1384,6 +1374,19 @@ layout_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_0y8xv")
 script = ExtResource("40_lwklj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="PostProcessing" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_y2md8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("15_y2md8")
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
