@@ -199,5 +199,9 @@ stream = ExtResource("7_jcwj4")
 [node name="Timer" type="Timer" parent="Character_Main"]
 one_shot = true
 
+[node name="Selection Timer" type="Timer" parent="Character_Main"]
+wait_time = 30.0
+
 [connection signal="area_entered" from="Character_Main/Area2D_for_Objects" to="Character_Main" method="_on_area_2d_for_objects_area_entered"]
 [connection signal="area_exited" from="Character_Main/Area2D_for_Objects" to="Character_Main" method="_on_area_2d_for_objects_area_exited"]
+[connection signal="timeout" from="Character_Main/Selection Timer" to="Character_Main" method="_on_selection_timer_timeout"]

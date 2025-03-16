@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=59 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
 [ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
-[ext_resource type="Texture2D" uid="uid://8y4b1nvxjs0g" path="res://Game/Images/blackscreen.png" id="45_ehmn8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -347,17 +346,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"4",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y5cim"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_ehmn8")
-}],
-"loop": true,
-"name": &"default",
 "speed": 5.0
 }]
 
@@ -1490,23 +1478,6 @@ offset_right = -105.0
 offset_bottom = 86.0
 theme_override_fonts/font = ExtResource("7_ehmn8")
 text = "End This"
-
-[node name="Blackscreen" type="AnimatedSprite2D" parent="Camera2D"]
-visible = false
-z_index = 4050
-sprite_frames = SubResource("SpriteFrames_y5cim")
-
-[node name="Label" type="Label" parent="Camera2D/Blackscreen"]
-z_index = 4051
-offset_left = -538.0
-offset_top = -95.0
-offset_right = 547.0
-offset_bottom = 106.0
-theme_override_fonts/font = ExtResource("7_ehmn8")
-theme_override_font_sizes/font_size = 100
-text = "U Failed"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_0y8xv")

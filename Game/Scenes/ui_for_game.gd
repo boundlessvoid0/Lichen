@@ -121,7 +121,10 @@ func update_menu(Line, Counter):
 
 func _nextday():
 	Day += 1
-	call("_readyday"+str(Day))
+	if Day < 8:
+		call("_readyday"+str(Day))
+	else:
+		get_parent().get_node("Blackscreen/Label").text = "U Destroyed Nature"
 
 func _readyday1():
 	Line0.text = str("Day "+ str(Day) +": To do")

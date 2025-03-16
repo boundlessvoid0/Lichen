@@ -1,6 +1,8 @@
 extends CharacterBody2D
 signal _animation_titel_ended(node)
 
+signal _death_pressed()
+
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 const SPEED = 500.0
@@ -13,18 +15,20 @@ var TARGET_X = 1500  # Adjust to world's center
 var _interactables = Array();
 var Camera
 var _timer = Timer.new();
+@onready var SelectionTimer = get_node("Selection Timer")
 
 var HolzLock = false
 var EssenLock = false
 var SteinLock = false
 var WasserLock = false
+var HouseLock = false
 
 
 var random_number 
 
 var pp = null;
 
-
+var continuegame
 
 func death():
 	_locked = true;
@@ -88,9 +92,6 @@ func _movement():
 				$Timer.start(0.5)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	var yrection := Input.get_axis("ui_up", "ui_down")
-	if yrection:
-		velocity.y = yrection * SPEED
 	move_and_slide()
 
 
@@ -144,17 +145,33 @@ func _on_area_2d_for_objects_area_exited(area: Area2D) -> void:
 	$Icons_Character2.visible = false
 	_interactables.erase(area.get_parent());
 
+func _deathornot(_interactable):
+	pp.Play(2, 1);
+	_timer.start(2);
+	await _timer.timeout
+	_interactable.Interact();
+	Camera.get_node("UI for game")._nextday()
+
 func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
 		if sequence == "Haus" and !(HolzLock && EssenLock && WasserLock && SteinLock) == false:
 			if Input.is_key_pressed(KEY_E):
-				pp.Play(2, 1);
-				_timer.start(2);
-				await _timer.timeout
 				_interactable.Interact();
 				Camera.get_node("UI for game")._nextday()
+				Camera.get_node("UI for game/Sleep menu").visible = true
+				Camera.get_node("UI for game/Sleep menu/Continue Game").disabled = false
+				Camera.get_node("UI for game/Sleep menu/End Game").disabled = false
+				
+				await _death_pressed
+		
+				Camera.get_node("UI for game/Sleep menu").visible = false
+				Camera.get_node("UI for game/Sleep menu/Continue Game").disabled = true
+				Camera.get_node("UI for game/Sleep menu/End Game").disabled = true
+				if continuegame == false:
+					Camera.get_node("Blackscreen").visible = true
+					Camera.get_node("Blackscreen/Label").text = str("U saved Nature")
 			
 			if sequence != "":
 				print(sequence)
@@ -177,3 +194,17 @@ func _process(delta : float) -> void:
 				if Camera.get_node("UI for game").call("decrease"+sequence+"Counter") <= 0:
 					set(sequence+"Lock", true)
 				_interactable = null;
+
+
+func _on_selection_timer_timeout() -> void:
+	pass # Replace with function body.
+
+
+func _on_continue_game_pressed() -> void:
+	continuegame = true
+	emit_signal("_death_pressed")
+
+
+func _on_end_game_pressed() -> void:
+	continuegame = false
+	emit_signal("_death_pressed")
