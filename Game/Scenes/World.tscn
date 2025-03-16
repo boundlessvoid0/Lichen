@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=51 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="28_l782u"]
 [ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="29_bqrhx"]
 [ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="30_3m6xv"]
+[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="32_kcr3i"]
 [ext_resource type="Texture2D" uid="uid://chjf6v3jv2eak" path="res://Game/Images/Sky/Pink.png" id="33_xpo2j"]
 [ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="34_kcr3i"]
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
@@ -184,6 +185,121 @@ animations = [{
 }],
 "loop": true,
 "name": &"Grass4",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwklj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ve43q")
+}],
+"loop": true,
+"name": &"BackTree1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_x1xrn")
+}],
+"loop": true,
+"name": &"BackTree2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_v7cu3")
+}],
+"loop": true,
+"name": &"BackTree3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jhl6s")
+}],
+"loop": true,
+"name": &"BackTree4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_xpo2j")
+}],
+"loop": true,
+"name": &"Flower1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_kcr3i")
+}],
+"loop": true,
+"name": &"Flower2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_lwklj")
+}],
+"loop": true,
+"name": &"Flower3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_0y8xv")
+}],
+"loop": true,
+"name": &"Flower4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ssmg1")
+}],
+"loop": true,
+"name": &"Flower5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_kg66c")
+}],
+"loop": true,
+"name": &"Grass1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_l782u")
+}],
+"loop": true,
+"name": &"Grass2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_bqrhx")
+}],
+"loop": true,
+"name": &"Grass3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_3m6xv")
+}],
+"loop": true,
+"name": &"Grass4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_kcr3i")
+}],
+"loop": true,
+"name": &"Grass_Chonk",
 "speed": 5.0
 }]
 
@@ -680,6 +796,13 @@ position = Vector2(-158, 238)
 position = Vector2(4635, 110)
 scale = Vector2(1.54, 1.23)
 skew = -0.359538
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem4"]
+position = Vector2(-6863, 110)
+scale = Vector2(1.54, 1.23)
+skew = -0.359538
+sprite_frames = SubResource("SpriteFrames_lwklj")
+animation = &"Grass_Chonk"
 
 [node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -1195,6 +1318,8 @@ layout_mode = 2
 
 [node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]

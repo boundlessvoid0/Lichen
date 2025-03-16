@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ba2flhm2c2jo0"
+path="res://.godot/imported/HamsterSterben.wav-fe5e5f2d003228763faf93d1d705433c.sample"
+
+[deps]
+
+source_file="res://Game/Sounds/sound that dont work/HamsterSterben.wav"
+dest_files=["res://.godot/imported/HamsterSterben.wav-fe5e5f2d003228763faf93d1d705433c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
