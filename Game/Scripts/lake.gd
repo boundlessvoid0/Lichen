@@ -7,10 +7,15 @@ func GetSequence() -> String:
 	return "Wasser"
 
 func Interact() -> void:
+
 	$AudioStreamPlayer2D.stream = water_sound
 	$AudioStreamPlayer2D.play()
+
+	$Lake_Area/Lake_Collision.disabled = true
+
 	return
 
 func Update() -> void:
 	state += 1;
 	self.get_node("Lake_Area/Lake_Sprite").play(str(state));
+	$Lake_Area/Lake_Collision.disabled = false;

@@ -385,9 +385,9 @@ script = ExtResource("15_y2md8")
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
-offset_left = -565.0
+offset_left = 935.0
 offset_top = -292.0
-offset_right = -525.0
+offset_right = 975.0
 offset_bottom = -252.0
 
 [node name="Button" type="Button" parent="Titlescreen"]
@@ -414,7 +414,7 @@ position = Vector2(2134, 246)
 position = Vector2(2324, -56)
 
 [node name="Player" parent="." instance=ExtResource("2_a1f1x")]
-position = Vector2(-1089, 18)
+position = Vector2(-222, 18)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(372, 0)
@@ -429,9 +429,9 @@ shape = SubResource("RectangleShape2D_hlc17")
 position = Vector2(5889, 0)
 shape = SubResource("RectangleShape2D_e56ki")
 
-[node name="Areas" type="Node" parent="."]
+[node name="Areas" type="Node2D" parent="."]
 
-[node name="Wiese" type="Node" parent="Areas"]
+[node name="Wiese" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
 position = Vector2(4867, -3)
@@ -468,11 +468,11 @@ position = Vector2(3118, -17)
 scale = Vector2(21.22, 21.22)
 shape = SubResource("RectangleShape2D_q08w6")
 
-[node name="House" type="Node" parent="Areas"]
+[node name="House" type="Node2D" parent="Areas"]
 
-[node name="Forest" type="Node" parent="Areas"]
+[node name="Forest" type="Node2D" parent="Areas"]
 
-[node name="treelayer front" type="Node" parent="Areas/Forest"]
+[node name="treelayer front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Tree8" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
 position = Vector2(142, -63)
@@ -502,7 +502,7 @@ position = Vector2(287, 70)
 position = Vector2(-230, -193)
 rotation = 0.0891524
 
-[node name="mushrooms front" type="Node" parent="Areas/Forest"]
+[node name="mushrooms front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Mushrooms" parent="Areas/Forest/mushrooms front" instance=ExtResource("9_7yp87")]
 position = Vector2(-860, 182)
@@ -513,12 +513,12 @@ position = Vector2(-422, 156)
 [node name="mushrooms3" parent="Areas/Forest/mushrooms front" instance=ExtResource("11_vlq5u")]
 position = Vector2(840, 430)
 
-[node name="Steinbruch" type="Node" parent="Areas"]
+[node name="Steinbruch" type="Node2D" parent="Areas"]
 
 [node name="Stone" parent="Areas/Steinbruch" instance=ExtResource("14_p7028")]
 position = Vector2(-2902, 240)
 
-[node name="See" type="Node" parent="Areas"]
+[node name="See" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
@@ -529,9 +529,9 @@ position = Vector2(-5216, 325)
 [node name="Lake2" parent="Areas/See" instance=ExtResource("17_v7cu3")]
 position = Vector2(6282, 325)
 
-[node name="Verschönerungen" type="Node" parent="Areas"]
+[node name="Verschönerungen" type="Node2D" parent="Areas"]
 
-[node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
+[node name="Blumen" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -539,6 +539,7 @@ position = Vector2(-158, 238)
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem" index="0"]
 position = Vector2(5030, 238)
 animation = &"Flower2"
+frame_progress = 0.0
 
 [node name="BackgroundItem7" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -548,6 +549,7 @@ position = Vector2(5042, 244)
 rotation = -1.028
 skew = -0.575959
 animation = &"Flower2"
+frame_progress = 0.0
 flip_h = true
 
 [node name="BackgroundItem3" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
@@ -559,6 +561,7 @@ rotation = 0.357792
 scale = Vector2(0.94, 0.751)
 skew = -0.411898
 animation = &"Flower4"
+frame_progress = 0.0
 
 [node name="BackgroundItem8" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -570,6 +573,7 @@ rotation = 0.357792
 scale = Vector2(0.94, 0.751)
 skew = -0.411898
 animation = &"Flower5"
+frame_progress = 0.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8"]
 visible = false
@@ -815,6 +819,7 @@ rotation = 0.0610865
 scale = Vector2(1.2, 1.004)
 skew = -0.575959
 animation = &"Flower3"
+frame_progress = 0.0
 flip_v = true
 
 [node name="BackgroundItem6" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
@@ -827,10 +832,11 @@ rotation = 0.0610865
 scale = Vector2(1.2, 1.004)
 skew = -0.575959
 animation = &"Flower2"
+frame_progress = 0.0
 
-[node name="Grass" type="Node" parent="Areas/Verschönerungen"]
+[node name="Grass" type="Node2D" parent="Areas/Verschönerungen"]
 
-[node name="Bäume" type="Node" parent="Areas/Verschönerungen"]
+[node name="Bäume" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -840,6 +846,7 @@ position = Vector2(-145, 135)
 z_index = -1
 position = Vector2(-1961, -170)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem2" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -848,6 +855,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-1410, -123)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem3" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -856,6 +864,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-1790, -175)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem4" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -864,6 +873,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-1345, -92)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem5" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -872,6 +882,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-2001, -85)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem6" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -880,6 +891,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-1575, -167)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem7" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -888,6 +900,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-2255, 66)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem8" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -896,6 +909,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-1007, 37)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem9" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -904,6 +918,7 @@ z_index = -1
 z_index = -1
 position = Vector2(926, 136)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem10" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -912,6 +927,7 @@ z_index = -1
 z_index = -1
 position = Vector2(114, -35)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem11" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -920,6 +936,7 @@ z_index = -1
 z_index = -1
 position = Vector2(315, -21)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem12" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -928,6 +945,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-408, 43)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem13" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -936,6 +954,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-218, 8)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem14" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -944,6 +963,7 @@ z_index = -1
 z_index = -1
 position = Vector2(24, -23)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem15" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -952,6 +972,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-881, 57)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem16" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -960,6 +981,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-310, 35)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem17" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -968,6 +990,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-52, -11)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem18" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -976,6 +999,7 @@ z_index = -1
 z_index = -1
 position = Vector2(190, -20)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem19" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -984,6 +1008,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-766, 58)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem20" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -992,6 +1017,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-518, 60)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem21" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1000,6 +1026,7 @@ z_index = -1
 z_index = -1
 position = Vector2(559, 40)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem22" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1008,6 +1035,7 @@ z_index = -1
 z_index = -1
 position = Vector2(656, 66)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem23" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1016,6 +1044,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-142, 5)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem24" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1024,6 +1053,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-641, 67)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem25" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1032,6 +1062,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-941, 48)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem26" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1040,6 +1071,7 @@ z_index = -1
 z_index = -1
 position = Vector2(384, -2)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem27" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1048,6 +1080,7 @@ z_index = -1
 z_index = -1
 position = Vector2(251, -21)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem28" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1056,6 +1089,7 @@ z_index = -1
 z_index = -1
 position = Vector2(467, 21)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem29" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1064,6 +1098,7 @@ z_index = -1
 z_index = -1
 position = Vector2(867, 133)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem30" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1072,6 +1107,7 @@ z_index = -1
 z_index = -1
 position = Vector2(729, 100)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem31" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1080,6 +1116,7 @@ z_index = -1
 z_index = -1
 position = Vector2(801, 119)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem32" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1088,6 +1125,7 @@ z_index = -1
 z_index = -1
 position = Vector2(1076, 148)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem33" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1096,6 +1134,7 @@ z_index = -1
 z_index = -1
 position = Vector2(1032, 160)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem34" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1104,6 +1143,7 @@ z_index = -1
 z_index = -1
 position = Vector2(984, 149)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem35" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1112,6 +1152,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-579, 57)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem36" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1120,6 +1161,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-463, 56)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem37" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1128,6 +1170,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-354, 45)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem38" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1136,6 +1179,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-825, 55)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem39" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1144,6 +1188,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-715, 69)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem40" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1152,6 +1197,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-5361, -77)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40"]
 z_index = -1
@@ -1166,6 +1212,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-4528, 94)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41"]
 z_index = -1
@@ -1180,6 +1227,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-4976, -21)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42"]
 z_index = -1
@@ -1194,6 +1242,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-3927, 110)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem44" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1202,6 +1251,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-3531, -6)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem45" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1210,6 +1260,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-3724, 53)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem46" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1218,6 +1269,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-2974, -64)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem47" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1226,6 +1278,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-2745, -18)
 animation = &"BackTree4"
+frame_progress = 0.0
 
 [node name="BackgroundItem48" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1234,6 +1287,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-2533, 63)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="BackgroundItem49" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1242,6 +1296,7 @@ z_index = -1
 z_index = -1
 position = Vector2(-3223, -64)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem50" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1250,6 +1305,7 @@ z_index = -1
 z_index = -1
 position = Vector2(3296, 53)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem51" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1258,6 +1314,7 @@ z_index = -1
 z_index = -1
 position = Vector2(1384, 77)
 animation = &"BackTree1"
+frame_progress = 0.0
 
 [node name="BackgroundItem52" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1266,6 +1323,7 @@ z_index = -1
 z_index = -1
 position = Vector2(1661, 75)
 animation = &"BackTree2"
+frame_progress = 0.0
 
 [node name="BackgroundItem53" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
@@ -1273,8 +1331,10 @@ z_index = -1
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem53" index="0"]
 position = Vector2(3062, 48)
 animation = &"BackTree3"
+frame_progress = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1500, 0)
 position_smoothing_speed = 10.0
 drag_left_margin = 0.1
 drag_right_margin = 0.1
@@ -1291,11 +1351,13 @@ animation = &"1"
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 9.0
+offset_right = 49.0
 offset_bottom = 40.0
 script = ExtResource("14_jxhki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/UI for game"]
+visible = false
 layout_mode = 0
 offset_left = -864.0
 offset_top = -486.0
@@ -1306,7 +1368,8 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
-text = "To Do:"
+text = "
+"
 label_settings = ExtResource("17_oa8ph")
 
 [node name="Quest1" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]

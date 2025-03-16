@@ -9,7 +9,7 @@ const GRAVITY = 100.0
 
 var _animation_titel_bool = false
 var _locked = true
-var TARGET_X = 0  # Adjust to world's center
+var TARGET_X = 1500  # Adjust to world's center
 var _interactables = Array();
 var Camera
 
@@ -46,6 +46,8 @@ func _animation_titel():
 		_locked = false
 		if get_parent().get_parent().has_node("Camera2D"):
 			get_parent().get_parent().get_node("Camera2D")._change_parent(self)
+			Camera.position.x = 0
+			Camera.get_node("UI for game/VBoxContainer").visible = true
 
 	move_and_slide()
 
@@ -120,7 +122,7 @@ func _process(delta : float) -> void:
 		if sequence == "Haus" and !(HolzLock && EssenLock && WasserLock && SteinLock) == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
-				Camera.get_node("UI for game")._readyday2()
+				Camera.get_node("UI for game")._nextday()
 			
 			if sequence != "":
 				print(sequence)

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8sogx3brbo7f" path="res://Game/Images/water_clean.png" id="1_ec0cd"]
 [ext_resource type="Script" uid="uid://c8hi32r8lvisy" path="res://Game/Scripts/lake.gd" id="1_ioqqi"]
 [ext_resource type="Texture2D" uid="uid://bfdkgxptt176x" path="res://Game/Images/water_dirty.png" id="2_ioqqi"]
+[ext_resource type="Texture2D" uid="uid://djhgh6aj4frke" path="res://Game/Images/water_empty.png" id="4_srecf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srecf"]
 size = Vector2(2284, 509)
@@ -22,7 +23,15 @@ animations = [{
 "texture": ExtResource("2_ioqqi")
 }],
 "loop": true,
-"name": &"1",
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_srecf")
+}],
+"loop": true,
+"name": &"5",
 "speed": 5.0
 }]
 

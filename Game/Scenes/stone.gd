@@ -12,5 +12,6 @@ func Interact() -> void:
 	$AudioStreamPlayer2D.play()
 
 func Update() -> void:
-	self.get_node("Lake_Area/Stone_Sprite").play(str(state));
+	state += 1;
+	self.get_node("Stone_Area/Stone_Sprite").play(str(state));
 	$Stone_Area/Stone_Collision.disabled = false;

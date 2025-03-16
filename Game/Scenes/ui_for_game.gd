@@ -4,14 +4,24 @@ var HolzCount = 1
 var EssenCount = 1
 var SteinCount = 1
 var WasserCount = 1
-var Daytime = 1
+var Day = 1
 var TaskCounter
 
 var Player
 @onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
+@onready var Tent = get_parent().get_parent().get_node("Tent")
 @onready var Stein = get_parent().get_parent().get_node("Areas/Steinbruch/Stone")
-@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake")]
 @onready var Music = get_parent().get_parent().get_node("AudioStreamPlayer")
+@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake2")]
+@onready var Chonks = [
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk2").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk3").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk4").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk5").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk6").get_child(0)
+	]
+
 var HausLevel = 0
 
 var Icon1= TextureRect.new()
@@ -19,7 +29,7 @@ var Icon2= TextureRect.new()
 var Icon3= TextureRect.new()
 var Icon4= TextureRect.new()
 
-
+@onready var Line0 = get_node("VBoxContainer/Label")
 var Line1= Label.new()
 var Line2= Label.new()
 var Line3= Label.new()
@@ -80,6 +90,8 @@ func update_menu(Line, Counter):
 	match TaskCounter:
 		0:
 			get_parent().get_node("AnimatedSprite2D").play("4")
+			Line0.text = str("Day "+ str(Day) +": Go to Bed")
+			
 		1:
 			get_parent().get_node("AnimatedSprite2D").play("3")
 		2:
@@ -90,16 +102,46 @@ func update_menu(Line, Counter):
 			get_parent().get_node("AnimatedSprite2D").play("1")
 # Called when the node enters the scene tree for the first time.
 
+func _nextday():
+	Day += 1
+	call("_readyday"+str(Day))
 
 func _readyday1():
+	Line0.text = str("Day "+ str(Day) +": To do")
 	Line1.text = str("x " + str(HolzCount))
 	Line2.text = str("x " + str(EssenCount))
 	Line3.text = str("x " + str(SteinCount))
 	Line4.text = str("x " + str(WasserCount))
 	
+	
 	TaskCounter = 4
 
 func _readyday2():
+	
+	_readytexts()
+	_reset_day()
+
+func _readyday3():
+	
+	_readytexts()
+	_reset_day()
+	
+func _readyday4():
+	
+	_readytexts()
+	_reset_day()
+	
+func _readyday5():
+	
+	_readytexts()
+	_reset_day()
+	
+func _readyday6():
+	
+	_readytexts()
+	_reset_day()
+	
+func _readyday7():
 	
 	_readytexts()
 	_reset_day()
@@ -113,7 +155,8 @@ func _readytexts():
 	EssenCount = 1
 	SteinCount = 1
 	WasserCount = 1
-
+	
+	Line0.text = str("Day "+ str(Day) +": To do")
 	Line1.text = str("x " + str(HolzCount))
 	Line2.text = str("x " + str(EssenCount))
 	Line3.text = str("x " + str(SteinCount))
@@ -128,8 +171,13 @@ func _reset_day():
 	get_parent().get_node("AnimatedSprite2D").play("1")
 	HausLevel += 1
 	Haus.play("lv"+str(HausLevel))
-	
-
+		# Update Sprites and reset collision
+	for chonk in Chonks:
+		chonk.Update();
+	for wasser in Wassers:
+		wasser.Update();
+	Stein.Update();
+	Tent.Update();
 
 func _on_audio_stream_player_finished() -> void:
 	Music.play()
