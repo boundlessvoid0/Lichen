@@ -4,6 +4,8 @@ const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 100.0
 
+var sound_dead = preload("res://Game/Sounds/HamsterSterben.wav")
+
 var TARGET_X = 0  # Adjust to world's center
 var _timer = Timer.new();
 var _randomNumberGenerator = RandomNumberGenerator.new();
@@ -13,6 +15,8 @@ var is_harvested = false
 func Interact() -> void:
 	self.get_node("Sprite_Chonk").play("dead :(");
 	$Chonk_Interaction/Collision_Interaction.disabled = true
+	$AudioStreamPlayer2D.stream = sound_dead
+	$AudioStreamPlayer2D.play()
 	is_harvested = true;
 
 func GetSequence() -> String:
