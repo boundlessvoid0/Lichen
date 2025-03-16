@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="2_xwi3i"]
 [ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="3_ayfg5"]
 [ext_resource type="Texture2D" uid="uid://c2x8youqu2jrl" path="res://Game/Images/Background/BackTree4.png" id="4_v66gv"]
-[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/fliegen.png" id="5_bvu0v"]
+[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/Fliegen.png" id="5_bvu0v"]
 [ext_resource type="Texture2D" uid="uid://s6rnop4w4rj3" path="res://Game/Images/Background/Flower1.png" id="5_ephgy"]
 [ext_resource type="Texture2D" uid="uid://fxd61cb13yr6" path="res://Game/Images/Background/Flower2.png" id="6_bvu0v"]
 [ext_resource type="Texture2D" uid="uid://c7cw03nxtyxpr" path="res://Game/Images/Background/Flower3.png" id="7_ccgqq"]

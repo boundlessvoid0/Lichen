@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
-[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
+[ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -395,6 +395,7 @@ theme_override_fonts/font = ExtResource("3_3m6xv")
 text = "Start
 "
 script = ExtResource("5_dw6xd")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="Titlescreen/Button"]
 layout_mode = 0
@@ -467,7 +468,6 @@ text = "This Game was made for Puls GameJam 20 25 by:
 -Stefan Oswald ~ Programmer"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PostProcessing" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_y2md8")
@@ -476,6 +476,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
 script = ExtResource("15_y2md8")
 
