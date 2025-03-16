@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://co4cktm8ywsr0" path="res://Game/Scenes/chonk.tscn" id="16_q08w6"]
 [ext_resource type="LabelSettings" uid="uid://dbqi18l0mbxvh" path="res://Game/Scenes/World.tres" id="17_oa8ph"]
 [ext_resource type="PackedScene" uid="uid://8u238p434ue7" path="res://Game/Scenes/lake.tscn" id="17_v7cu3"]
-[ext_resource type="PackedScene" uid="uid://bpaab0xe7l6cr" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
+[ext_resource type="PackedScene" uid="uid://dqa3m1cnt7q7c" path="res://Game/Scenes/haus.tscn" id="18_p7028"]
 [ext_resource type="Texture2D" uid="uid://dsxj1huce1snm" path="res://Game/Images/Background/BackTree1.png" id="18_ve43q"]
 [ext_resource type="Texture2D" uid="uid://ret2usw7fir1" path="res://Game/Images/Background/BackTree2.png" id="19_x1xrn"]
 [ext_resource type="Texture2D" uid="uid://c2ou33gifd3gb" path="res://Game/Images/Background/BackTree3.png" id="20_v7cu3"]
@@ -311,9 +311,9 @@ shape = SubResource("RectangleShape2D_hlc17")
 position = Vector2(5889, 0)
 shape = SubResource("RectangleShape2D_e56ki")
 
-[node name="Areas" type="Node" parent="."]
+[node name="Areas" type="Node2D" parent="."]
 
-[node name="Wiese" type="Node" parent="Areas"]
+[node name="Wiese" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
 position = Vector2(4867, -3)
@@ -350,11 +350,11 @@ position = Vector2(3118, -17)
 scale = Vector2(21.22, 21.22)
 shape = SubResource("RectangleShape2D_q08w6")
 
-[node name="House" type="Node" parent="Areas"]
+[node name="House" type="Node2D" parent="Areas"]
 
-[node name="Forest" type="Node" parent="Areas"]
+[node name="Forest" type="Node2D" parent="Areas"]
 
-[node name="treelayer front" type="Node" parent="Areas/Forest"]
+[node name="treelayer front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Tree8" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
 position = Vector2(142, -63)
@@ -384,7 +384,7 @@ position = Vector2(287, 70)
 position = Vector2(-230, -193)
 rotation = 0.0891524
 
-[node name="mushrooms front" type="Node" parent="Areas/Forest"]
+[node name="mushrooms front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Mushrooms" parent="Areas/Forest/mushrooms front" instance=ExtResource("9_7yp87")]
 position = Vector2(-860, 182)
@@ -395,12 +395,12 @@ position = Vector2(-422, 156)
 [node name="mushrooms3" parent="Areas/Forest/mushrooms front" instance=ExtResource("11_vlq5u")]
 position = Vector2(840, 430)
 
-[node name="Steinbruch" type="Node" parent="Areas"]
+[node name="Steinbruch" type="Node2D" parent="Areas"]
 
 [node name="Stone" parent="Areas/Steinbruch" instance=ExtResource("14_p7028")]
 position = Vector2(-2902, 240)
 
-[node name="See" type="Node" parent="Areas"]
+[node name="See" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
@@ -411,9 +411,9 @@ position = Vector2(-5216, 325)
 [node name="Lake2" parent="Areas/See" instance=ExtResource("17_v7cu3")]
 position = Vector2(6282, 325)
 
-[node name="Verschönerungen" type="Node" parent="Areas"]
+[node name="Verschönerungen" type="Node2D" parent="Areas"]
 
-[node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
+[node name="Blumen" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -703,9 +703,9 @@ scale = Vector2(1.2, 1.004)
 skew = -0.575959
 animation = &"Flower2"
 
-[node name="Grass" type="Node" parent="Areas/Verschönerungen"]
+[node name="Grass" type="Node2D" parent="Areas/Verschönerungen"]
 
-[node name="Bäume" type="Node" parent="Areas/Verschönerungen"]
+[node name="Bäume" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
 z_index = -1
