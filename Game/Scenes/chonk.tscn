@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://co4cktm8ywsr0"]
+[gd_scene load_steps=42 format=3 uid="uid://co4cktm8ywsr0"]
 
 [ext_resource type="Script" uid="uid://ch0lx0sverk8t" path="res://Game/Scripts/chonk.gd" id="1_8ifot"]
 [ext_resource type="Texture2D" uid="uid://sljdwp85pvha" path="res://Game/Images/Chonky_Idle.png" id="1_swujr"]
 [ext_resource type="Texture2D" uid="uid://djji28gbggn67" path="res://Game/Images/Chonky_dead.png" id="2_dfcb4"]
 [ext_resource type="Texture2D" uid="uid://b068iwje02m4o" path="res://Game/Images/Chonky_Walk.png" id="4_agy4c"]
 [ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/fliegen.png" id="5_fu1o5"]
+[ext_resource type="AudioStream" uid="uid://ct37tysc6ku1j" path="res://Game/Sounds/Insekte.wav" id="6_knvd1"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_agy4c"]
 
@@ -290,4 +291,9 @@ collision_mask = 2
 position = Vector2(4.5, -0.5)
 shape = SubResource("RectangleShape2D_dfcb4")
 
+[node name="FLIEGENGRR" type="AudioStreamPlayer2D" parent="Chonk"]
+stream = ExtResource("6_knvd1")
+max_distance = 980.0
+
 [connection signal="area_entered" from="Chonk/Chonk_Interaction" to="Chonk" method="_on_interaction_area_entered"]
+[connection signal="finished" from="Chonk/FLIEGENGRR" to="Chonk" method="_on_fliegengrr_finished"]

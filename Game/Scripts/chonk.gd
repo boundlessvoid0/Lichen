@@ -26,6 +26,7 @@ func Update() -> void:
 	if is_harvested:
 		get_node("Flies").visible = true;
 		get_node("Flies").play("default");
+		$FLIEGENGRR.play()
 
 func _movement(delta : float):
 	velocity.x += TARGET_X * delta;
@@ -70,3 +71,7 @@ func _collision_check():
 			self.get_node("Sprite_Chonk")
 		elif velocity.x < 0:
 			self.get_node("Sprite_Chonk").flip_h = false
+
+
+func _on_fliegengrr_finished() -> void:
+	$FLIEGENGRR.play()
