@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ce8ivmlah8q2t"
+path="res://.godot/imported/Walk1.wav-b7ead5a820d8ff7d001c10e0e2e21ef0.sample"
+
+[deps]
+
+source_file="res://Game/Sounds/sound that dont work/Walk1.wav"
+dest_files=["res://.godot/imported/Walk1.wav-b7ead5a820d8ff7d001c10e0e2e21ef0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

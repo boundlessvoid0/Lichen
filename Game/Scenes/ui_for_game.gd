@@ -9,6 +9,8 @@ var TaskCounter
 
 var Player
 @onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
+@onready var Stein = get_parent().get_parent().get_node("Areas/Steinbruch/Stone")
+@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake")]
 var HausLevel = 0
 
 var Icon1= TextureRect.new()

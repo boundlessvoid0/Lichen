@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4pen0j0sicms"
+path="res://.godot/imported/Cricket.wav-792825cb888422588ee80a6187abc361.sample"
+
+[deps]
+
+source_file="res://Game/Sounds/sound that dont work/Cricket.wav"
+dest_files=["res://.godot/imported/Cricket.wav-792825cb888422588ee80a6187abc361.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
