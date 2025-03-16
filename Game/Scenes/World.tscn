@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
-[ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
+[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
