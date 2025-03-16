@@ -116,7 +116,7 @@ func _process(delta : float) -> void:
 		if sequence == "Haus" and !(HolzLock && EssenLock && WasserLock && SteinLock) == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
-				Camera.get_node("UI for game").get_node("VBoxContainer/Label").text = "Go To Sleep"
+				Camera.get_node("UI for game")._readyday2()
 			
 			if sequence != "":
 				print(sequence)

@@ -8,6 +8,8 @@ var Daytime = 1
 var TaskCounter
 
 var Player
+@onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
+var HausLevel = 0
 
 var Icon1= TextureRect.new()
 var Icon2= TextureRect.new()
@@ -96,6 +98,7 @@ func _readyday1():
 func _readyday2():
 	
 	_readytexts()
+	_reset_day()
 
 
 func _process(delta: float) -> void:
@@ -117,3 +120,8 @@ func _reset_day():
 	Player.EssenLock = false
 	Player.SteinLock = false
 	Player.WasserLock = false
+	TaskCounter = 4
+	get_parent().get_node("AnimatedSprite2D").play("1")
+	HausLevel += 1
+	Haus.play("lv"+str(HausLevel))
+	
