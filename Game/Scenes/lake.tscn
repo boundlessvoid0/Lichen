@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://8u238p434ue7"]
+[gd_scene load_steps=9 format=3 uid="uid://8u238p434ue7"]
 
 [ext_resource type="Texture2D" uid="uid://8sogx3brbo7f" path="res://Game/Images/water_clean.png" id="1_ec0cd"]
 [ext_resource type="Script" uid="uid://c8hi32r8lvisy" path="res://Game/Scripts/lake.gd" id="1_ioqqi"]
 [ext_resource type="Texture2D" uid="uid://bfdkgxptt176x" path="res://Game/Images/water_dirty.png" id="2_ioqqi"]
 [ext_resource type="Texture2D" uid="uid://djhgh6aj4frke" path="res://Game/Images/water_empty.png" id="4_srecf"]
+[ext_resource type="AudioStream" uid="uid://wxynqf55476a" path="res://Game/Sounds/Cricket.wav" id="5_in8jx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srecf"]
 size = Vector2(2284, 509)
@@ -54,3 +55,9 @@ animation = &"0"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_ioqqi")
+
+[node name="Crickets_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_in8jx")
+max_distance = 1200.0
+
+[connection signal="finished" from="Crickets_Sound" to="." method="_on_crickets_sound_finished"]

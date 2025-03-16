@@ -1458,6 +1458,7 @@ layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_0y8xv")
+volume_db = -6.0
 script = ExtResource("40_lwklj")
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
