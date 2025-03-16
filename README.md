@@ -6,6 +6,7 @@
 - Sinnvolle Namen, die beschreiben um was es sich handelt
     - counter in loops können aber auch nur ein Buchstabe sein
 
+
 ## LFS
 
 ### Git LFS
