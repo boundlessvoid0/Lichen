@@ -18,6 +18,11 @@ func Interact() -> void:
 func GetSequence() -> String:
 	return "Essen"
 
+func Update() -> void:
+	if is_harvested:
+		get_node("Flies").visible = true;
+		get_node("Flies").play("default");
+
 func _movement(delta : float):
 	velocity.x += TARGET_X * delta;
 	self.get_node("Sprite_Chonk").play("walk");
@@ -34,6 +39,7 @@ func SetNewLocation():
 
 func _ready() -> void:
 	self.add_child(_timer);
+	get_node("Flies").visible = false;
 	_timer.start(5);
 
 func _physics_process(delta: float) -> void:

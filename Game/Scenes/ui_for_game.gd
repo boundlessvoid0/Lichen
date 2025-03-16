@@ -1,10 +1,27 @@
 extends Control
 
 var HolzCount = 1
-var EssenCount = 2
-var SteinCount = 2
-var WasserCount = 2
+var EssenCount = 1
+var SteinCount = 1
+var WasserCount = 1
 var Daytime = 1
+var TaskCounter
+
+var Player
+@onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
+@onready var Tent = get_parent().get_parent().get_node("Tent")
+@onready var Stein = get_parent().get_parent().get_node("Areas/Steinbruch/Stone")
+@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake2")]
+@onready var Chonks = [
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk2").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk3").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk4").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk5").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk6").get_child(0)
+	]
+
+var HausLevel = 0
 
 var Icon1= TextureRect.new()
 var Icon2= TextureRect.new()
@@ -78,8 +95,19 @@ func update_menu(Line, Counter):
 		get("Line"+str(Line)).text = str("x "+str(Counter))
 	else:
 		get("Line"+str(Line)).text = str("Done")
-	Daytime += 1
-	#get_parent().get_node("AnimatedSprite2D").play(str(Daytime))
+		TaskCounter -= 1
+	
+	match TaskCounter:
+		0:
+			get_parent().get_node("AnimatedSprite2D").play("4")
+		1:
+			get_parent().get_node("AnimatedSprite2D").play("3")
+		2:
+			get_parent().get_node("AnimatedSprite2D").play("2")
+		3:
+			get_parent().get_node("AnimatedSprite2D").play("2")
+		4:
+			get_parent().get_node("AnimatedSprite2D").play("1")
 # Called when the node enters the scene tree for the first time.
 
 
@@ -88,8 +116,43 @@ func _readyday1():
 	Line2.text = str("x " + str(EssenCount))
 	Line3.text = str("x " + str(SteinCount))
 	Line4.text = str("x " + str(WasserCount))
-#	Icon1.custom_minimum_size = Vector2(16, 16)
-#	Icon2.custom_minimum_size = Vector2(16, 16)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	
+	TaskCounter = 4
+
+func _readyday2():
+	
+	_readytexts()
+	_reset_day()
+
+
 func _process(delta: float) -> void:
 	pass
+
+func _readytexts():
+	HolzCount = 1
+	EssenCount = 1
+	SteinCount = 1
+	WasserCount = 1
+
+	Line1.text = str("x " + str(HolzCount))
+	Line2.text = str("x " + str(EssenCount))
+	Line3.text = str("x " + str(SteinCount))
+	Line4.text = str("x " + str(WasserCount))
+	
+func _reset_day():
+	Player.HolzLock = false
+	Player.EssenLock = false
+	Player.SteinLock = false
+	Player.WasserLock = false
+	TaskCounter = 4
+	get_parent().get_node("AnimatedSprite2D").play("1")
+	HausLevel += 1
+	Haus.play("lv"+str(HausLevel))
+
+	# Update Sprites and reset collision
+	for chonk in Chonks:
+		chonk.Update();
+	for wasser in Wassers:
+		wasser.Update();
+	Stein.Update();
+	Tent.Update();

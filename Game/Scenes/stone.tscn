@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://db8jhv7wfs35r"]
+[gd_scene load_steps=8 format=3 uid="uid://db8jhv7wfs35r"]
 
 [ext_resource type="Texture2D" uid="uid://db7ne5erc65b0" path="res://Game/Images/stone_Lichen.png" id="1_6r1p1"]
 [ext_resource type="Script" uid="uid://yvlopun8iud6" path="res://Game/Scenes/stone.gd" id="1_76gys"]
+[ext_resource type="Texture2D" uid="uid://b3g2qo30veedp" path="res://Game/Images/stone_2.png" id="3_qysv0"]
+[ext_resource type="Texture2D" uid="uid://c7705u8wohxhi" path="res://Game/Images/stone_3.png" id="4_7dwcj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76gys"]
 atlas = ExtResource("1_6r1p1")
@@ -14,7 +16,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_76gys")
 }],
 "loop": true,
-"name": &"default",
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qysv0")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7dwcj")
+}],
+"loop": true,
+"name": &"6",
 "speed": 5.0
 }]
 
@@ -30,6 +48,7 @@ collision_mask = 2
 
 [node name="Stone_Sprite" type="AnimatedSprite2D" parent="Stone_Area"]
 sprite_frames = SubResource("SpriteFrames_wwrel")
+animation = &"0"
 
 [node name="Stone_Collision" type="CollisionShape2D" parent="Stone_Area"]
 position = Vector2(-32.0001, -535.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=51 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -34,7 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://w3sehag4q6bf" path="res://Game/Images/Background/Grass2.png" id="28_l782u"]
 [ext_resource type="Texture2D" uid="uid://ciwq7wsylumfo" path="res://Game/Images/Background/Grass3.png" id="29_bqrhx"]
 [ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="30_3m6xv"]
-[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="32_x1xrn"]
+[ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="32_kcr3i"]
+[ext_resource type="Texture2D" uid="uid://chjf6v3jv2eak" path="res://Game/Images/Sky/Pink.png" id="33_xpo2j"]
+[ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="34_kcr3i"]
+[ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
+[ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -184,7 +188,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v7cu3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwklj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -292,10 +296,45 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_x1xrn")
+"texture": ExtResource("32_kcr3i")
 }],
 "loop": true,
 "name": &"Grass_Chonk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssmg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_xpo2j")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_kcr3i")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_lwklj")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_0y8xv")
+}],
+"loop": true,
+"name": &"4",
 "speed": 5.0
 }]
 
@@ -319,7 +358,6 @@ z_index = -10
 sprite_frames = SubResource("SpriteFrames_e56ki")
 
 [node name="WeltCollision" type="StaticBody2D" parent="World"]
-visible = false
 z_index = -2
 position = Vector2(-11498, 10)
 collision_layer = 5
@@ -389,9 +427,9 @@ shape = SubResource("RectangleShape2D_hlc17")
 position = Vector2(5889, 0)
 shape = SubResource("RectangleShape2D_e56ki")
 
-[node name="Areas" type="Node" parent="."]
+[node name="Areas" type="Node2D" parent="."]
 
-[node name="Wiese" type="Node" parent="Areas"]
+[node name="Wiese" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
 position = Vector2(4867, -3)
@@ -428,11 +466,11 @@ position = Vector2(3118, -17)
 scale = Vector2(21.22, 21.22)
 shape = SubResource("RectangleShape2D_q08w6")
 
-[node name="House" type="Node" parent="Areas"]
+[node name="House" type="Node2D" parent="Areas"]
 
-[node name="Forest" type="Node" parent="Areas"]
+[node name="Forest" type="Node2D" parent="Areas"]
 
-[node name="treelayer front" type="Node" parent="Areas/Forest"]
+[node name="treelayer front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Tree8" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
 position = Vector2(142, -63)
@@ -462,7 +500,7 @@ position = Vector2(287, 70)
 position = Vector2(-230, -193)
 rotation = 0.0891524
 
-[node name="mushrooms front" type="Node" parent="Areas/Forest"]
+[node name="mushrooms front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Mushrooms" parent="Areas/Forest/mushrooms front" instance=ExtResource("9_7yp87")]
 position = Vector2(-860, 182)
@@ -473,12 +511,12 @@ position = Vector2(-422, 156)
 [node name="mushrooms3" parent="Areas/Forest/mushrooms front" instance=ExtResource("11_vlq5u")]
 position = Vector2(840, 430)
 
-[node name="Steinbruch" type="Node" parent="Areas"]
+[node name="Steinbruch" type="Node2D" parent="Areas"]
 
 [node name="Stone" parent="Areas/Steinbruch" instance=ExtResource("14_p7028")]
 position = Vector2(-2902, 240)
 
-[node name="See" type="Node" parent="Areas"]
+[node name="See" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/See" instance=ExtResource("3_a1f1x")]
 position = Vector2(-4114, -90)
@@ -489,9 +527,9 @@ position = Vector2(-5216, 325)
 [node name="Lake2" parent="Areas/See" instance=ExtResource("17_v7cu3")]
 position = Vector2(6282, 325)
 
-[node name="Verschönerungen" type="Node" parent="Areas"]
+[node name="Verschönerungen" type="Node2D" parent="Areas"]
 
-[node name="Blumen" type="Node" parent="Areas/Verschönerungen"]
+[node name="Blumen" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
 position = Vector2(-158, 238)
@@ -763,7 +801,7 @@ skew = -0.359538
 position = Vector2(-6863, 110)
 scale = Vector2(1.54, 1.23)
 skew = -0.359538
-sprite_frames = SubResource("SpriteFrames_v7cu3")
+sprite_frames = SubResource("SpriteFrames_lwklj")
 animation = &"Grass_Chonk"
 
 [node name="BackgroundItem5" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
@@ -788,339 +826,447 @@ scale = Vector2(1.2, 1.004)
 skew = -0.575959
 animation = &"Flower2"
 
-[node name="Grass" type="Node" parent="Areas/Verschönerungen"]
+[node name="Grass" type="Node2D" parent="Areas/Verschönerungen"]
 
-[node name="Bäume" type="Node" parent="Areas/Verschönerungen"]
+[node name="Bäume" type="Node2D" parent="Areas/Verschönerungen"]
 
 [node name="BackgroundItem" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 position = Vector2(-145, 135)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem" index="0"]
+z_index = -1
 position = Vector2(-1961, -170)
 animation = &"BackTree1"
 
 [node name="BackgroundItem2" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem2" index="0"]
+z_index = -1
 position = Vector2(-1410, -123)
 animation = &"BackTree1"
 
 [node name="BackgroundItem3" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem3" index="0"]
+z_index = -1
 position = Vector2(-1790, -175)
 animation = &"BackTree1"
 
 [node name="BackgroundItem4" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem4" index="0"]
+z_index = -1
 position = Vector2(-1345, -92)
 animation = &"BackTree4"
 
 [node name="BackgroundItem5" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem5" index="0"]
+z_index = -1
 position = Vector2(-2001, -85)
 animation = &"BackTree3"
 
 [node name="BackgroundItem6" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem6" index="0"]
+z_index = -1
 position = Vector2(-1575, -167)
 animation = &"BackTree3"
 
 [node name="BackgroundItem7" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem7" index="0"]
+z_index = -1
 position = Vector2(-2255, 66)
 animation = &"BackTree2"
 
 [node name="BackgroundItem8" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem8" index="0"]
+z_index = -1
 position = Vector2(-1007, 37)
 animation = &"BackTree1"
 
 [node name="BackgroundItem9" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem9" index="0"]
+z_index = -1
 position = Vector2(926, 136)
 animation = &"BackTree1"
 
 [node name="BackgroundItem10" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem10" index="0"]
+z_index = -1
 position = Vector2(114, -35)
 animation = &"BackTree1"
 
 [node name="BackgroundItem11" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem11" index="0"]
+z_index = -1
 position = Vector2(315, -21)
 animation = &"BackTree1"
 
 [node name="BackgroundItem12" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem12" index="0"]
+z_index = -1
 position = Vector2(-408, 43)
 animation = &"BackTree1"
 
 [node name="BackgroundItem13" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem13" index="0"]
+z_index = -1
 position = Vector2(-218, 8)
 animation = &"BackTree1"
 
 [node name="BackgroundItem14" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem14" index="0"]
+z_index = -1
 position = Vector2(24, -23)
 animation = &"BackTree4"
 
 [node name="BackgroundItem15" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem15" index="0"]
+z_index = -1
 position = Vector2(-881, 57)
 animation = &"BackTree4"
 
 [node name="BackgroundItem16" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem16" index="0"]
+z_index = -1
 position = Vector2(-310, 35)
 animation = &"BackTree4"
 
 [node name="BackgroundItem17" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem17" index="0"]
+z_index = -1
 position = Vector2(-52, -11)
 animation = &"BackTree4"
 
 [node name="BackgroundItem18" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem18" index="0"]
+z_index = -1
 position = Vector2(190, -20)
 animation = &"BackTree2"
 
 [node name="BackgroundItem19" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem19" index="0"]
+z_index = -1
 position = Vector2(-766, 58)
 animation = &"BackTree1"
 
 [node name="BackgroundItem20" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem20" index="0"]
+z_index = -1
 position = Vector2(-518, 60)
 animation = &"BackTree2"
 
 [node name="BackgroundItem21" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem21" index="0"]
+z_index = -1
 position = Vector2(559, 40)
 animation = &"BackTree1"
 
 [node name="BackgroundItem22" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem22" index="0"]
+z_index = -1
 position = Vector2(656, 66)
 animation = &"BackTree1"
 
 [node name="BackgroundItem23" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem23" index="0"]
+z_index = -1
 position = Vector2(-142, 5)
 animation = &"BackTree2"
 
 [node name="BackgroundItem24" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem24" index="0"]
+z_index = -1
 position = Vector2(-641, 67)
 animation = &"BackTree4"
 
 [node name="BackgroundItem25" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem25" index="0"]
+z_index = -1
 position = Vector2(-941, 48)
 animation = &"BackTree3"
 
 [node name="BackgroundItem26" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem26" index="0"]
+z_index = -1
 position = Vector2(384, -2)
 animation = &"BackTree2"
 
 [node name="BackgroundItem27" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem27" index="0"]
+z_index = -1
 position = Vector2(251, -21)
 animation = &"BackTree4"
 
 [node name="BackgroundItem28" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem28" index="0"]
+z_index = -1
 position = Vector2(467, 21)
 animation = &"BackTree3"
 
 [node name="BackgroundItem29" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem29" index="0"]
+z_index = -1
 position = Vector2(867, 133)
 animation = &"BackTree1"
 
 [node name="BackgroundItem30" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem30" index="0"]
+z_index = -1
 position = Vector2(729, 100)
 animation = &"BackTree4"
 
 [node name="BackgroundItem31" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem31" index="0"]
+z_index = -1
 position = Vector2(801, 119)
 animation = &"BackTree3"
 
 [node name="BackgroundItem32" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem32" index="0"]
+z_index = -1
 position = Vector2(1076, 148)
 animation = &"BackTree1"
 
 [node name="BackgroundItem33" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem33" index="0"]
+z_index = -1
 position = Vector2(1032, 160)
 animation = &"BackTree2"
 
 [node name="BackgroundItem34" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem34" index="0"]
+z_index = -1
 position = Vector2(984, 149)
 animation = &"BackTree4"
 
 [node name="BackgroundItem35" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem35" index="0"]
+z_index = -1
 position = Vector2(-579, 57)
 animation = &"BackTree1"
 
 [node name="BackgroundItem36" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem36" index="0"]
+z_index = -1
 position = Vector2(-463, 56)
 animation = &"BackTree4"
 
 [node name="BackgroundItem37" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem37" index="0"]
+z_index = -1
 position = Vector2(-354, 45)
 animation = &"BackTree3"
 
 [node name="BackgroundItem38" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem38" index="0"]
+z_index = -1
 position = Vector2(-825, 55)
 animation = &"BackTree1"
 
 [node name="BackgroundItem39" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem39" index="0"]
+z_index = -1
 position = Vector2(-715, 69)
 animation = &"BackTree3"
 
 [node name="BackgroundItem40" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40" index="0"]
+z_index = -1
 position = Vector2(-5361, -77)
 animation = &"BackTree1"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem40"]
+z_index = -1
 position = Vector2(6137, -77)
 sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"BackTree1"
 
 [node name="BackgroundItem41" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41" index="0"]
+z_index = -1
 position = Vector2(-4528, 94)
 animation = &"BackTree1"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem41"]
+z_index = -1
 position = Vector2(6970, 94)
 sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"BackTree1"
 
 [node name="BackgroundItem42" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42" index="0"]
+z_index = -1
 position = Vector2(-4976, -21)
 animation = &"BackTree2"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem42"]
+z_index = -1
 position = Vector2(6522, -21)
 sprite_frames = SubResource("SpriteFrames_ngyqf")
 animation = &"BackTree2"
 
 [node name="BackgroundItem43" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem43" index="0"]
+z_index = -1
 position = Vector2(-3927, 110)
 animation = &"BackTree2"
 
 [node name="BackgroundItem44" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem44" index="0"]
+z_index = -1
 position = Vector2(-3531, -6)
 animation = &"BackTree2"
 
 [node name="BackgroundItem45" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem45" index="0"]
+z_index = -1
 position = Vector2(-3724, 53)
 animation = &"BackTree3"
 
 [node name="BackgroundItem46" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem46" index="0"]
+z_index = -1
 position = Vector2(-2974, -64)
 animation = &"BackTree1"
 
 [node name="BackgroundItem47" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem47" index="0"]
+z_index = -1
 position = Vector2(-2745, -18)
 animation = &"BackTree4"
 
 [node name="BackgroundItem48" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem48" index="0"]
+z_index = -1
 position = Vector2(-2533, 63)
 animation = &"BackTree3"
 
 [node name="BackgroundItem49" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem49" index="0"]
+z_index = -1
 position = Vector2(-3223, -64)
 animation = &"BackTree2"
 
 [node name="BackgroundItem50" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem50" index="0"]
+z_index = -1
 position = Vector2(3296, 53)
 animation = &"BackTree1"
 
 [node name="BackgroundItem51" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem51" index="0"]
+z_index = -1
 position = Vector2(1384, 77)
 animation = &"BackTree1"
 
 [node name="BackgroundItem52" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem52" index="0"]
+z_index = -1
 position = Vector2(1661, 75)
 animation = &"BackTree2"
 
 [node name="BackgroundItem53" parent="Areas/Verschönerungen/Bäume" instance=ExtResource("15_uanin")]
+z_index = -1
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Bäume/BackgroundItem53" index="0"]
 position = Vector2(3062, 48)
@@ -1133,6 +1279,11 @@ drag_right_margin = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("5_e56ki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+z_index = -100
+sprite_frames = SubResource("SpriteFrames_ssmg1")
+animation = &"1"
 
 [node name="UI for game" type="Control" parent="Camera2D"]
 z_index = 100
@@ -1167,6 +1318,8 @@ layout_mode = 2
 
 [node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]

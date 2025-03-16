@@ -1,6 +1,8 @@
 extends CharacterBody2D
 signal _animation_titel_ended(node)
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 100.0
@@ -16,6 +18,7 @@ var EssenLock = false
 var SteinLock = false
 var WasserLock = false
 
+
 func death():
 	_locked = true;
 	if get_parent().get_parent().has_node("CanvasLayer"):
@@ -26,6 +29,8 @@ func _ready():
 	$Icons_Character.visible = false
 	$Icons_Character2.visible = false
 	Camera = get_parent().get_parent().get_node("Camera2D")
+	Camera.get_node("UI for game").Player = self
+	
 
 func start_animation_titel():
 	_animation_titel_bool = true
@@ -112,10 +117,10 @@ func _process(delta : float) -> void:
 	if _interactables.size() > 0:
 		var _interactable = _interactables.get(_interactables.size() - 1);
 		var sequence = _interactable.GetSequence();
-		if sequence == "Haus":
+		if sequence == "Haus" and !(HolzLock && EssenLock && WasserLock && SteinLock) == false:
 			if Input.is_key_pressed(KEY_E):
 				_interactable.Interact();
-				Camera.get_node("UI for game").get_node("VBoxContainer/Label").text = "Go To Sleep"
+				Camera.get_node("UI for game")._readyday2()
 			
 			if sequence != "":
 				print(sequence)
