@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 500.0
+const JUMP_VELOCITY = -400.0
 const GRAVITY = 100.0
 
 var sound_dead = preload("res://Game/Sounds/HamsterSterben.wav")
@@ -29,17 +30,17 @@ func Update() -> void:
 
 func _movement(delta : float):
 	velocity.x += TARGET_X * delta;
+	self.get_node("Sprite_Chonk").play("walk");
 	move_and_slide()
 
 func SetNewLocation():
 	await _timer.timeout
-	if _randomNumberGenerator.randi_range(-5, 4) < 0:
-		TARGET_X = _randomNumberGenerator.randi_range(-40, 40);
-		if is_on_wall():
-			TARGET_X *= -1;
+	TARGET_X = _randomNumberGenerator.randi_range(-20, 20);
+	if is_on_wall():
+		TARGET_X *= -1;
 
 	_timer.stop();
-	_timer.start(_randomNumberGenerator.randi_range(4,8));
+	_timer.start(_randomNumberGenerator.randi_range(2,5));
 
 func _ready() -> void:
 	self.add_child(_timer);
