@@ -9,8 +9,18 @@ var TaskCounter
 
 var Player
 @onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
+@onready var Tent = get_parent().get_parent().get_node("Tent")
 @onready var Stein = get_parent().get_parent().get_node("Areas/Steinbruch/Stone")
-@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake")]
+@onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake2")]
+@onready var Chonks = [
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk2").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk3").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk4").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk5").get_child(0),
+		get_parent().get_parent().get_node("Areas/Wiese/Chonk6").get_child(0)
+	]
+
 var HausLevel = 0
 
 var Icon1= TextureRect.new()
@@ -126,4 +136,11 @@ func _reset_day():
 	get_parent().get_node("AnimatedSprite2D").play("1")
 	HausLevel += 1
 	Haus.play("lv"+str(HausLevel))
-	
+
+	# Update Sprites and reset collision
+	for chonk in Chonks:
+		chonk.Update();
+	for wasser in Wassers:
+		wasser.Update();
+	Stein.Update();
+	Tent.Update();
