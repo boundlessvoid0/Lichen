@@ -1196,6 +1196,8 @@ layout_mode = 2
 [node name="Quest4" type="HBoxContainer" parent="Camera2D/UI for game/VBoxContainer"]
 layout_mode = 2
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
