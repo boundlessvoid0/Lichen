@@ -1,17 +1,15 @@
-
-[gd_scene load_steps=40 format=3 uid="uid://co4cktm8ywsr0"]
-
+[gd_scene load_steps=41 format=3 uid="uid://co4cktm8ywsr0"]
 
 [ext_resource type="Script" uid="uid://ch0lx0sverk8t" path="res://Game/Scripts/chonk.gd" id="1_8ifot"]
 [ext_resource type="Texture2D" uid="uid://sljdwp85pvha" path="res://Game/Images/Chonky_Idle.png" id="1_swujr"]
 [ext_resource type="Texture2D" uid="uid://djji28gbggn67" path="res://Game/Images/Chonky_dead.png" id="2_dfcb4"]
 [ext_resource type="Texture2D" uid="uid://b068iwje02m4o" path="res://Game/Images/Chonky_Walk.png" id="4_agy4c"]
-[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/Fliegen.png" id="5_fu1o5"]
+[ext_resource type="Texture2D" uid="uid://d1doru2pwaxe4" path="res://Game/Images/fliegen.png" id="5_fu1o5"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_agy4c"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ifot"]
-radius = 7.75
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu1o5"]
+size = Vector2(20, 27.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfcb4"]
 atlas = ExtResource("1_swujr")
@@ -263,7 +261,7 @@ size = Vector2(145, 103)
 [node name="Chonk" type="Node2D"]
 
 [node name="Chonk" type="CharacterBody2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_8ifot")
 
@@ -271,12 +269,13 @@ script = ExtResource("1_8ifot")
 stream = SubResource("AudioStreamWAV_agy4c")
 
 [node name="Collision_Enviorment" type="CollisionShape2D" parent="Chonk"]
+position = Vector2(-2.49999, -9.04994e-06)
 rotation = 1.5708
 scale = Vector2(4, 4)
-shape = SubResource("CapsuleShape2D_8ifot")
+shape = SubResource("RectangleShape2D_fu1o5")
 
 [node name="Sprite_Chonk" type="AnimatedSprite2D" parent="Chonk"]
-position = Vector2(11, -1.5)
+position = Vector2(11, 5)
 sprite_frames = SubResource("SpriteFrames_wovqn")
 animation = &"idle"
 

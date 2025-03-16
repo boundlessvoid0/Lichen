@@ -40,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
 [ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
-[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
+[ext_resource type="Script" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -361,13 +361,13 @@ sprite_frames = SubResource("SpriteFrames_e56ki")
 
 [node name="WeltCollision" type="StaticBody2D" parent="World"]
 z_index = -2
-position = Vector2(-11498, 10)
+position = Vector2(-11498, 0)
 collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/WeltCollision"]
 position = Vector2(5, 0)
-polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4968, 337, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3600, 45, -3456, 10, -3207, -32, -2992, -27, -2810, 7, -2573, 83, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1123, 209, -973, 171, -829, 150, -684, 140, -592, 141, -501, 148, -375, 174, -230, 210, -84, 256, 68, 320, 160, 348, 367, 404, 469, 423, 566, 430, 682, 427, 836, 421, 966, 423, 1137, 408, 1204, 387, 1335, 374, 1445, 368, 1599, 383, 1833, 411, 2067, 418, 2327, 417, 2573, 415, 2917, 412, 3057, 390, 3155, 378, 3243, 368, 3377, 356, 3535, 343, 3680, 332, 3824, 332, 4095, 355, 4219, 368, 4352, 374, 4542, 370, 4731, 366, 4959, 326, 5168, 284, 5353, 239, 5434, 236, 5567, 230, 5744, 243, 5891, 260, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
+polygon = PackedVector2Array(-5754, 240, -5706, 242, -5643, 253, -5553, 268, -5439, 292, -5281, 323, -5047, 344, -4845, 338, -4568, 281, -4168, 213, -4047, 176, -3808, 106, -3701, 81, -3574, 60, -3397, 50, -3172, 28, -2965, 50, -2732, 84, -2535, 113, -2374, 160, -2189, 226, -2030, 269, -1896, 296, -1773, 308, -1677, 315, -1547, 303, -1390, 279, -1274, 258, -1158, 225, -973, 218, -808, 152, -684, 140, -559, 168, -458, 205, -364, 244, -198, 261, -91, 319, 49, 374, 174, 389, 329, 425, 460, 471, 587, 449, 682, 427, 836, 421, 954, 436, 1135, 421, 1220, 388, 1335, 374, 1445, 368, 1599, 383, 1833, 411, 2067, 418, 2327, 417, 2573, 415, 2917, 412, 3057, 390, 3155, 378, 3243, 368, 3377, 356, 3535, 343, 3680, 332, 3824, 332, 4059, 378, 4285, 399, 4475, 407, 4658, 436, 4892, 455, 5048, 422, 5227, 322, 5345, 286, 5458, 269, 5596, 276, 5768, 305, 5930, 329, 6128, 307, 6204, 317, 6204, 540, -5754, 540)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -434,21 +434,25 @@ shape = SubResource("RectangleShape2D_e56ki")
 [node name="Wiese" type="Node2D" parent="Areas"]
 
 [node name="Tree" parent="Areas/Wiese" instance=ExtResource("3_a1f1x")]
+z_index = -1
 position = Vector2(4867, -3)
 
 [node name="Chonk" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
 position = Vector2(3941, 299)
 
 [node name="Chonk2" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+z_index = -1
 position = Vector2(4970, 364)
 
 [node name="Chonk3" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
 position = Vector2(4389, 87)
 
 [node name="Chonk4" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+z_index = 2
 position = Vector2(3853, 45)
 
 [node name="Chonk5" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
+z_index = -1
 position = Vector2(4123, 304)
 
 [node name="Chonk6" parent="Areas/Wiese" instance=ExtResource("16_q08w6")]
@@ -475,10 +479,12 @@ shape = SubResource("RectangleShape2D_q08w6")
 [node name="treelayer front" type="Node2D" parent="Areas/Forest"]
 
 [node name="Tree8" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
+z_index = -1
 position = Vector2(142, -63)
 rotation = 0.148458
 
 [node name="Tree7" parent="Areas/Forest/treelayer front" instance=ExtResource("8_aaqah")]
+z_index = -1
 position = Vector2(528, 12)
 
 [node name="Tree2" parent="Areas/Forest/treelayer front" instance=ExtResource("8_aaqah")]
@@ -486,19 +492,22 @@ position = Vector2(-631, -263)
 rotation = -0.0200931
 
 [node name="Tree1" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
+z_index = -1
 position = Vector2(-1055, -227)
 rotation = -0.2021
 
 [node name="Tree3" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
+z_index = -1
 position = Vector2(1052, 1)
 
 [node name="Tree4" parent="Areas/Forest/treelayer front" instance=ExtResource("3_a1f1x")]
 position = Vector2(710, 11)
 
 [node name="Tree5" parent="Areas/Forest/treelayer front" instance=ExtResource("8_aaqah")]
-position = Vector2(287, 70)
+position = Vector2(269, 71)
 
 [node name="Tree6" parent="Areas/Forest/treelayer front" instance=ExtResource("8_aaqah")]
+z_index = -1
 position = Vector2(-230, -193)
 rotation = 0.0891524
 
@@ -553,6 +562,7 @@ frame_progress = 0.0
 flip_h = true
 
 [node name="BackgroundItem3" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
+z_index = -3
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem3" index="0"]
@@ -564,6 +574,7 @@ animation = &"Flower4"
 frame_progress = 0.0
 
 [node name="BackgroundItem8" parent="Areas/Verschönerungen/Blumen" instance=ExtResource("15_uanin")]
+z_index = -3
 position = Vector2(-158, 238)
 
 [node name="AnimatedSprite2D" parent="Areas/Verschönerungen/Blumen/BackgroundItem8" index="0"]
