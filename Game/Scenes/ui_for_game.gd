@@ -56,6 +56,11 @@ func _ready() -> void:
 	Line2.label_settings = load("res://Game/Scenes/Quest.tres")
 	Line3.label_settings = load("res://Game/Scenes/Quest.tres")
 	Line4.label_settings = load("res://Game/Scenes/Quest.tres")
+	
+	Line1.label_settings.font = load("res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf")
+	Line2.label_settings.font = load("res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf")
+	Line3.label_settings.font = load("res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf")
+	Line4.label_settings.font = load("res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf")
 
 	Icon1.texture = load("res://Game/Images/Icons/Loeg.png")
 	Icon2.texture = load("res://Game/Images/Icons/Met.png")

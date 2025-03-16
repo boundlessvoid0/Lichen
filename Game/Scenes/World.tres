@@ -1,6 +1,9 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://dbqi18l0mbxvh"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dbqi18l0mbxvh"]
+
+[ext_resource type="FontFile" uid="uid://cq4vu75nw4vaw" path="res://Game/Godot Fontpack/fonts/kirifont/KiriFont.ttf" id="1_7t4us"]
 
 [resource]
+font = ExtResource("1_7t4us")
 font_size = 120
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
