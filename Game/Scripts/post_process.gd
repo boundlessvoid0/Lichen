@@ -1,5 +1,6 @@
 extends ColorRect
 
+# BROKEN
 var _darkness_level : float;
 var _blur_level : float;
 var _dead: bool;
