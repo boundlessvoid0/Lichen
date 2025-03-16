@@ -18,6 +18,7 @@ var EssenLock = false
 var SteinLock = false
 var WasserLock = false
 
+var random_number 
 
 func death():
 	_locked = true;
@@ -61,6 +62,20 @@ func _movement():
 		direction = 1
 	if direction:
 		velocity.x = direction * SPEED
+		if $Timer.time_left <= 0:
+			random_number = int(randf_range(0, 2))
+			if random_number == 0:
+				$AudioStreamPlayer2D.set_stream(preload("res://Game/Sounds/Walk1.wav"))
+				$AudioStreamPlayer2D.play()
+				$Timer.start(0.5)
+			if random_number == 1:
+				$AudioStreamPlayer2D.set_stream(preload("res://Game/Sounds/Walk2.wav"))
+				$AudioStreamPlayer2D.play()
+				$Timer.start(0.5)
+			if random_number == 2:
+				$AudioStreamPlayer2D.set_stream(preload("res://Game/Sounds/Walk3.wav"))
+				$AudioStreamPlayer2D.play()
+				$Timer.start(0.5)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	var yrection := Input.get_axis("ui_up", "ui_down")
