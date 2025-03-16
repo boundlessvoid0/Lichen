@@ -11,6 +11,7 @@ var Player
 @onready var Haus = get_parent().get_parent().get_node("Haus/AnimatedSprite2D")
 @onready var Stein = get_parent().get_parent().get_node("Areas/Steinbruch/Stone")
 @onready var Wassers = [get_parent().get_parent().get_node("Areas/See/Lake"), get_parent().get_parent().get_node("Areas/See/Lake")]
+@onready var Music = get_parent().get_parent().get_node("AudioStreamPlayer")
 var HausLevel = 0
 
 var Icon1= TextureRect.new()
@@ -25,6 +26,7 @@ var Line3= Label.new()
 var Line4= Label.new()
 
 func _ready() -> void:
+	Music.play()
 	get_node("VBoxContainer/Quest1").add_child(Icon1)
 	get_node("VBoxContainer/Quest2").add_child(Icon2)
 	get_node("VBoxContainer/Quest3").add_child(Icon3)
@@ -127,3 +129,7 @@ func _reset_day():
 	HausLevel += 1
 	Haus.play("lv"+str(HausLevel))
 	
+
+
+func _on_audio_stream_player_finished() -> void:
+	Music.play()

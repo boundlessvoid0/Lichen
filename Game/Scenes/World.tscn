@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://c8ujs7efufrw"]
+[gd_scene load_steps=53 format=3 uid="uid://c8ujs7efufrw"]
 
 [ext_resource type="Texture2D" uid="uid://d3wdaegpwu1jk" path="res://Game/Images/World.jpg" id="1_05kjn"]
 [ext_resource type="Texture2D" uid="uid://b1j17ynxeu045" path="res://Game/Images/World.png" id="1_hlc17"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://bj1c8i0ygjmfk" path="res://Game/Images/Sky/BluSky.png" id="34_kcr3i"]
 [ext_resource type="Texture2D" uid="uid://t2myy3wxtall" path="res://Game/Images/Sky/Orange.png" id="35_lwklj"]
 [ext_resource type="Texture2D" uid="uid://dsleohh0yvsua" path="res://Game/Images/Sky/Night.png" id="36_0y8xv"]
+[ext_resource type="AudioStream" uid="uid://cp5wuhd8h8wgd" path="res://Game/Sounds/Music/music1.mp3" id="40_0y8xv"]
+[ext_resource type="Script" uid="uid://cjgotq68p4gxi" path="res://Game/Scenes/audio_stream_player.gd" id="40_lwklj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e56ki"]
 atlas = ExtResource("1_hlc17")
@@ -1320,10 +1322,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_0y8xv")
+script = ExtResource("40_lwklj")
 
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button" method="_on_pressed"]
 [connection signal="pressed" from="Titlescreen/Button" to="Titlescreen/Button2" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="Camera2D/UI for game" method="_on_audio_stream_player_finished"]
 
 [editable path="Player"]
 [editable path="Areas/Verschönerungen/Blumen/BackgroundItem"]

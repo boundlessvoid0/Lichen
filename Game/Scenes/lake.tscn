@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://8u238p434ue7"]
+[gd_scene load_steps=7 format=3 uid="uid://8u238p434ue7"]
 
 [ext_resource type="Texture2D" uid="uid://8sogx3brbo7f" path="res://Game/Images/water_clean.png" id="1_ec0cd"]
 [ext_resource type="Script" uid="uid://c8hi32r8lvisy" path="res://Game/Scripts/lake.gd" id="1_ioqqi"]
@@ -26,6 +26,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_ioqqi"]
+
 [node name="Lake" type="Node2D"]
 script = ExtResource("1_ioqqi")
 
@@ -40,3 +42,6 @@ shape = SubResource("RectangleShape2D_srecf")
 [node name="Lake_Sprite" type="AnimatedSprite2D" parent="Lake_Area"]
 sprite_frames = SubResource("SpriteFrames_in8jx")
 animation = &"0"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_ioqqi")
