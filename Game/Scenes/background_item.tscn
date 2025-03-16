@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dhw7r6l3gvyvd" path="res://Game/Images/Background/Grass4.png" id="13_cfiui"]
 [ext_resource type="Texture2D" uid="uid://c2cxfkchvgqky" path="res://Game/Images/chonk_flowers.png" id="14_xwi3i"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ngyqf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7cu3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -133,5 +133,5 @@ animations = [{
 [node name="BackgroundItem" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_ngyqf")
+sprite_frames = SubResource("SpriteFrames_v7cu3")
 animation = &"Grass_Chonk"
