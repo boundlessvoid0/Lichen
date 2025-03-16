@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://fbp5h4wlf8gj"]
+
+[ext_resource type="Script" uid="uid://c860biiujim6" path="res://Game/Scripts/scaled_world.gd" id="1_eal67"]
+[ext_resource type="PackedScene" uid="uid://c8ujs7efufrw" path="res://Game/Scenes/World.tscn" id="2_utgwv"]
+
+[node name="ScaledWorld" type="Node2D"]
+script = ExtResource("1_eal67")
+
+[node name="Node2D" parent="." instance=ExtResource("2_utgwv")]
